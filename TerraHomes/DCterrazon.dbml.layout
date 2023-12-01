@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DCterrazon">
+  <DataContextMoniker Name="/DCterrazonDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d4a1bdb3-caad-45ed-9be5-7a62400a55e4" absoluteBounds="1.75, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DCterrazonDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3701c2f-273b-4986-9b6f-a6038a7b1f84" absoluteBounds="1.7649999999999997, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dab9f486-1027-4965-8e64-81d4b725471a" absoluteBounds="4, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DCterrazonDataContext/AgentsProperty" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a93f5c2-a4dc-4ed6-a9a3-f77446d0cfb7" absoluteBounds="4.015, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22562d9f-60b2-4908-85f5-e37105c51c79" absoluteBounds="5.25, 4.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DCterrazonDataContext/PropertyImage" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35a8c616-b7ed-420f-bb65-7401550bee3d" absoluteBounds="5.265, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb468568-3efc-4251-be4a-d35a969e81ef" absoluteBounds="2.5, 3.5, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/DCterrazonDataContext/Property" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15c8164f-e995-4af0-8c05-49fd415670b9" absoluteBounds="2.5149999999999997, 3.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 3.5); (4.25 : 2.0112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCterrazonDataContext/Property/Property_AgentsProperty" />
+      <nodes>
+        <classShapeMoniker Id="eb468568-3efc-4251-be4a-d35a969e81ef" />
+        <classShapeMoniker Id="dab9f486-1027-4965-8e64-81d4b725471a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 4.81814697265625); (5.25 : 4.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCterrazonDataContext/Property/Property_PropertyImage" />
+      <nodes>
+        <classShapeMoniker Id="eb468568-3efc-4251-be4a-d35a969e81ef" />
+        <classShapeMoniker Id="22562d9f-60b2-4908-85f5-e37105c51c79" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 2.78049967447917); (3.125 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DCterrazonDataContext/User/User_Property" />
+      <nodes>
+        <classShapeMoniker Id="d4a1bdb3-caad-45ed-9be5-7a62400a55e4" />
+        <classShapeMoniker Id="eb468568-3efc-4251-be4a-d35a969e81ef" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
