@@ -110,6 +110,7 @@
             this.gbtnAgents.TabIndex = 2;
             this.gbtnAgents.Text = "Agents";
             this.gbtnAgents.TextOffset = new System.Drawing.Point(10, 0);
+            this.gbtnAgents.Click += new System.EventHandler(this.gbtnAgents_Click);
             // 
             // gbtnProperties
             // 
@@ -137,6 +138,7 @@
             this.gbtnProperties.TabIndex = 3;
             this.gbtnProperties.Text = "Properties";
             this.gbtnProperties.TextOffset = new System.Drawing.Point(10, 0);
+            this.gbtnProperties.Click += new System.EventHandler(this.gbtnProperties_Click);
             // 
             // gbtnFinance
             // 

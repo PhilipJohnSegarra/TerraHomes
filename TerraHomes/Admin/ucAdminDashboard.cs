@@ -23,7 +23,8 @@ namespace TerraHomes.Admin
 
             AutoScroll = true;
 
-            AddCardsPanel();
+            //AddCardsPanel();
+
             Random r = new Random();
             Random p = new Random();
             RevenueLineGraph(1, 1000, "Revenue", r);
@@ -131,20 +132,16 @@ namespace TerraHomes.Admin
         }
         private void DonutGraph()
         {
-            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            string[] months = { "Property Sales", "Rentals", "Others" };
             var r = new Random();
             var donutDataSet1 = new Guna.Charts.WinForms.GunaDoughnutDataset();
-            var donutDataSet2 = new Guna.Charts.WinForms.GunaDoughnutDataset();
-            var donutDataSet3 = new Guna.Charts.WinForms.GunaDoughnutDataset();
             donutDataSet1.DataPoints.Add(months[0], r.Next(1, 1000));
-            donutDataSet2.DataPoints.Add(months[1], r.Next(1, 1000));
-            donutDataSet3.DataPoints.Add(months[2], r.Next(1, 1000));
+            donutDataSet1.DataPoints.Add(months[1], r.Next(1, 1000));
+            donutDataSet1.DataPoints.Add(months[2], r.Next(1, 1000));
             //donutDataSet.FillColors.AddRange(new System.Drawing.Color[] { Color.FromArgb(79, 59, 43) });
             //donutDataSet.BorderWidth = 2;
             //donutDataSet.BorderColors.AddRange(new System.Drawing.Color[] { Color.White });
             occupancyPie.Datasets.Add(donutDataSet1);
-            occupancyPie.Datasets.Add(donutDataSet2);
-            occupancyPie.Datasets.Add(donutDataSet3);
             occupancyPie.Update();
         }
 

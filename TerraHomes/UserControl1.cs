@@ -18,7 +18,7 @@ namespace TerraHomes
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            terraZon = new frmTerraZon();
+            
             db = new DCterrazonDataContext();
         }
 
@@ -31,6 +31,7 @@ namespace TerraHomes
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            terraZon = new frmTerraZon();
             var users = from user in db.Users
                         where user.Username == txtUsername.Text && user.Password == txtPassword.Text
                         select user;

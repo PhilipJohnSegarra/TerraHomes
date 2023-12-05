@@ -43,12 +43,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,12 +63,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Agents\ucAgents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Agents\ucAgents.Designer.cs">
+      <DependentUpon>ucAgents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Agents\ucAgentsThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Agents\ucAgentsThumbnail.Designer.cs">
+      <DependentUpon>ucAgentsThumbnail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CardsPanel.cs" />
     <Compile Include="Admin\Finance\ucFinance.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Admin\Finance\ucFinance.Designer.cs">
       <DependentUpon>ucFinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Properties\ucAddNewProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Properties\ucAddNewProperty.Designer.cs">
+      <DependentUpon>ucAddNewProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Properties\ucProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Properties\ucProperties.Designer.cs">
+      <DependentUpon>ucProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Properties\ucPropertyThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Properties\ucPropertyThumbnail.Designer.cs">
+      <DependentUpon>ucPropertyThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Properties\ucViewProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Properties\ucViewProperty.Designer.cs">
+      <DependentUpon>ucViewProperty.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\ucAdminDashboard.cs">
       <SubType>UserControl</SubType>
@@ -124,8 +162,26 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UsersDB.cs" />
+    <EmbeddedResource Include="Admin\Agents\ucAgents.resx">
+      <DependentUpon>ucAgents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Agents\ucAgentsThumbnail.resx">
+      <DependentUpon>ucAgentsThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Finance\ucFinance.resx">
       <DependentUpon>ucFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Properties\ucAddNewProperty.resx">
+      <DependentUpon>ucAddNewProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Properties\ucProperties.resx">
+      <DependentUpon>ucProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Properties\ucPropertyThumbnail.resx">
+      <DependentUpon>ucPropertyThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Properties\ucViewProperty.resx">
+      <DependentUpon>ucViewProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ucAdminDashboard.resx">
       <DependentUpon>ucAdminDashboard.cs</DependentUpon>
@@ -184,6 +240,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

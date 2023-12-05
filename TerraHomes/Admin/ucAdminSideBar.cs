@@ -20,16 +20,28 @@ namespace TerraHomes.Admin
         }
         public event EventHandler DashboardButtonClicked;
         public event EventHandler FinanceButtonClicked;
+        public event EventHandler PropertiesButtonClicked;
+        public event EventHandler AgentsButtonClicked;
 
 
-        public void gtbnDashboard_Click(object sender, EventArgs e)
+        private void gtbnDashboard_Click(object sender, EventArgs e)
         {
             DashboardButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        public void gbtnFinance_Click(object sender, EventArgs e)
+        private void gbtnFinance_Click(object sender, EventArgs e)
         {
             FinanceButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void gbtnProperties_Click(object sender, EventArgs e)
+        {
+            PropertiesButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void gbtnAgents_Click(object sender, EventArgs e)
+        {
+            AgentsButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

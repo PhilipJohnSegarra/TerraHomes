@@ -32,5 +32,17 @@ namespace TerraHomes.Properties {
                 return ((string)(this["TerraZonDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Occupany Rate")]
+        public string Rentals {
+            get {
+                return ((string)(this["Rentals"]));
+            }
+            set {
+                this["Rentals"] = value;
+            }
+        }
     }
 }

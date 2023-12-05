@@ -10,6 +10,7 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="User_Property" Member="Properties" ThisKey="UserID" OtherKey="OwnerID" Type="Property" />
+      <Association Name="User_Transaction" Member="Transactions" ThisKey="UserID" OtherKey="AgentID" Type="Transaction" />
     </Type>
   </Table>
   <Table Name="dbo.AgentsProperties" Member="AgentsProperties">
@@ -41,7 +42,33 @@
       <Column Name="OwnerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Property_AgentsProperty" Member="AgentsProperties" ThisKey="PropertyID" OtherKey="PropertyID" Type="AgentsProperty" />
       <Association Name="Property_PropertyImage" Member="PropertyImages" ThisKey="PropertyID" OtherKey="PropertyID" Type="PropertyImage" />
+      <Association Name="Property_Transaction" Member="Transactions" ThisKey="PropertyID" OtherKey="PropertyID" Type="Transaction" />
       <Association Name="User_Property" Member="User" ThisKey="OwnerID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transactions" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PropertyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_Transaction" Member="User" ThisKey="AgentID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+      <Association Name="Property_Transaction" Member="Property" ThisKey="PropertyID" OtherKey="PropertyID" Type="Property" IsForeignKey="true" />
+      <Association Name="Customer_Transaction" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="Customer_Transaction" Member="Transactions" ThisKey="CustomerID" OtherKey="CustomerID" Type="Transaction" />
     </Type>
   </Table>
   <Function Name="dbo.sp_GetData" Method="sp_GetData">
