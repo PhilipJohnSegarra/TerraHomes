@@ -16,7 +16,7 @@ namespace TerraHomes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTerraZon());
+            Application.Run(new frmStartUp());
         }
     }
 }

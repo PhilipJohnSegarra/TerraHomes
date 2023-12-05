@@ -40,7 +40,7 @@
         <classShapeMoniker Id="22562d9f-60b2-4908-85f5-e37105c51c79" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.125 : 2.78049967447917); (3.125 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.125 : 2.78049967447917); (3.125 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCterrazonDataContext/User/User_Property" />
       <nodes>
         <classShapeMoniker Id="d4a1bdb3-caad-45ed-9be5-7a62400a55e4" />
@@ -53,14 +53,14 @@
         <elementListCompartment Id="f50040b7-e780-4cf4-9b51-205a17fc979b" absoluteBounds="6.765, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.75 : 2.42714680989583); (4.16666666666667 : 2.42714680989583 : JumpStart); (4.33333333333333 : 2.42714680989583 : JumpEnd); (6.75 : 2.42714680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.75 : 2.42714680989583); (6.75 : 2.42714680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCterrazonDataContext/User/User_Transaction" />
       <nodes>
         <classShapeMoniker Id="d4a1bdb3-caad-45ed-9be5-7a62400a55e4" />
         <classShapeMoniker Id="06b2fe2a-1e5a-4bfa-bcd0-3aaabd65a2ce" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 3.78125); (8.03125 : 3.78125); (8.03125 : 3.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 3.78125); (8.03125 : 3.78125); (8.03125 : 3.40549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCterrazonDataContext/Property/Property_Transaction" />
       <nodes>
         <classShapeMoniker Id="eb468568-3efc-4251-be4a-d35a969e81ef" />
@@ -73,7 +73,7 @@
         <elementListCompartment Id="34ea6aac-364a-4714-93df-5e66a25f80bd" absoluteBounds="7.765, 5.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.453125 : 5.25); (8.453125 : 3.40549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.453125 : 5.25); (8.453125 : 3.40549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCterrazonDataContext/Customer/Customer_Transaction" />
       <nodes>
         <classShapeMoniker Id="a5c185cf-155b-4315-b0f7-dc953d890ca2" />

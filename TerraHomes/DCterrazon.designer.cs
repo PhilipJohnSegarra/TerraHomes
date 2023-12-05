@@ -141,6 +141,174 @@ namespace TerraHomes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, username, password);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteAgentsProperties")]
+		public int sp_DeleteAgentsProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentpropID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentpropID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteUsers")]
+		public int sp_DeleteUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteCustomers")]
+		public int sp_DeleteCustomers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteProperties")]
+		public int sp_DeleteProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeletePropertyImages")]
+		public int sp_DeletePropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> imageID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), imageID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteTransactions")]
+		public int sp_DeleteTransactions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> transactionID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), transactionID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAgentProperties")]
+		public ISingleResult<sp_GetAgentPropertiesResult> sp_GetAgentProperties()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetAgentPropertiesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetCustomers")]
+		public ISingleResult<sp_GetCustomersResult> sp_GetCustomers()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetCustomersResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetProperties")]
+		public ISingleResult<sp_GetPropertiesResult> sp_GetProperties()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetPropertiesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetUsers")]
+		public ISingleResult<sp_GetUsersResult> sp_GetUsers()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetUsersResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetPropertyImages")]
+		public ISingleResult<sp_GetPropertyImagesResult> sp_GetPropertyImages()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetPropertyImagesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetTransactions")]
+		public ISingleResult<sp_GetTransactionsResult> sp_GetTransactions()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetTransactionsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertAgentProperties")]
+		public int sp_InsertAgentProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentID, propertyID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertPropertyImages")]
+		public int sp_InsertPropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string imageURL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, imageURL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertCustomers")]
+		public int sp_InsertCustomers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string address)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fname, lname, email, phone, address);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertProperties")]
+		public int sp_InsertProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string propname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(550)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,0)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string size)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propname, address, description, type, status, price, size);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertTransactions")]
+		public int sp_InsertTransactions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date, agentID, customerID, propertyID, amount, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUsers")]
+		public int sp_InsertUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, firstname, lastname, email, usertype);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateAgentProperties")]
+		public int sp_UpdateAgentProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentpropID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentpropID, agentID, propID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsers")]
+		public int sp_UpdateUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, username, password, firstname, lastname, email, usertype);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateCustomers")]
+		public int sp_UpdateCustomers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string address)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerID, fname, lname, email, phone, address);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateProperties")]
+		public int sp_UpdateProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string propname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(550)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string size)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, propname, address, description, type, status, price, size);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdatePropertyImages")]
+		public int sp_UpdatePropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> imageID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string imageURL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), imageID, propertyID, imageURL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateTransactions")]
+		public int sp_UpdateTransactions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> transactionID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), transactionID, date, agentID, customerID, propertyID, amount, status);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
@@ -1754,6 +1922,684 @@ namespace TerraHomes
 				if ((this._UserType != value))
 				{
 					this._UserType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAgentPropertiesResult
+	{
+		
+		private int _AgentPropertyID;
+		
+		private System.Nullable<int> _AgentID;
+		
+		private System.Nullable<int> _PropertyID;
+		
+		public sp_GetAgentPropertiesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgentPropertyID", DbType="Int NOT NULL")]
+		public int AgentPropertyID
+		{
+			get
+			{
+				return this._AgentPropertyID;
+			}
+			set
+			{
+				if ((this._AgentPropertyID != value))
+				{
+					this._AgentPropertyID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgentID", DbType="Int")]
+		public System.Nullable<int> AgentID
+		{
+			get
+			{
+				return this._AgentID;
+			}
+			set
+			{
+				if ((this._AgentID != value))
+				{
+					this._AgentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyID", DbType="Int")]
+		public System.Nullable<int> PropertyID
+		{
+			get
+			{
+				return this._PropertyID;
+			}
+			set
+			{
+				if ((this._PropertyID != value))
+				{
+					this._PropertyID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetCustomersResult
+	{
+		
+		private int _CustomerID;
+		
+		private string _Firstname;
+		
+		private string _Lastname;
+		
+		private string _Email;
+		
+		private string _Phone;
+		
+		private string _Address;
+		
+		public sp_GetCustomersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int NOT NULL")]
+		public int CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this._CustomerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
+		public string Firstname
+		{
+			get
+			{
+				return this._Firstname;
+			}
+			set
+			{
+				if ((this._Firstname != value))
+				{
+					this._Firstname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
+		public string Lastname
+		{
+			get
+			{
+				return this._Lastname;
+			}
+			set
+			{
+				if ((this._Lastname != value))
+				{
+					this._Lastname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(250)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetPropertiesResult
+	{
+		
+		private int _PropertyID;
+		
+		private string _PropertyName;
+		
+		private string _Address;
+		
+		private string _Description;
+		
+		private string _Type;
+		
+		private string _Status;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private string _Size;
+		
+		private System.Nullable<int> _OwnerID;
+		
+		public sp_GetPropertiesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyID", DbType="Int NOT NULL")]
+		public int PropertyID
+		{
+			get
+			{
+				return this._PropertyID;
+			}
+			set
+			{
+				if ((this._PropertyID != value))
+				{
+					this._PropertyID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyName", DbType="VarChar(250)")]
+		public string PropertyName
+		{
+			get
+			{
+				return this._PropertyName;
+			}
+			set
+			{
+				if ((this._PropertyName != value))
+				{
+					this._PropertyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(250)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(550)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(100)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(150)")]
+		public string Size
+		{
+			get
+			{
+				return this._Size;
+			}
+			set
+			{
+				if ((this._Size != value))
+				{
+					this._Size = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OwnerID", DbType="Int")]
+		public System.Nullable<int> OwnerID
+		{
+			get
+			{
+				return this._OwnerID;
+			}
+			set
+			{
+				if ((this._OwnerID != value))
+				{
+					this._OwnerID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetUsersResult
+	{
+		
+		private int _UserID;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Firstname;
+		
+		private string _Lastname;
+		
+		private string _Email;
+		
+		private string _UserType;
+		
+		public sp_GetUsersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
+		public string Firstname
+		{
+			get
+			{
+				return this._Firstname;
+			}
+			set
+			{
+				if ((this._Firstname != value))
+				{
+					this._Firstname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
+		public string Lastname
+		{
+			get
+			{
+				return this._Lastname;
+			}
+			set
+			{
+				if ((this._Lastname != value))
+				{
+					this._Lastname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="VarChar(50)")]
+		public string UserType
+		{
+			get
+			{
+				return this._UserType;
+			}
+			set
+			{
+				if ((this._UserType != value))
+				{
+					this._UserType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetPropertyImagesResult
+	{
+		
+		private int _ImageID;
+		
+		private System.Nullable<int> _PropertyID;
+		
+		private string _ImageURL;
+		
+		public sp_GetPropertyImagesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageID", DbType="Int NOT NULL")]
+		public int ImageID
+		{
+			get
+			{
+				return this._ImageID;
+			}
+			set
+			{
+				if ((this._ImageID != value))
+				{
+					this._ImageID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyID", DbType="Int")]
+		public System.Nullable<int> PropertyID
+		{
+			get
+			{
+				return this._PropertyID;
+			}
+			set
+			{
+				if ((this._PropertyID != value))
+				{
+					this._PropertyID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageURL", DbType="VarChar(50)")]
+		public string ImageURL
+		{
+			get
+			{
+				return this._ImageURL;
+			}
+			set
+			{
+				if ((this._ImageURL != value))
+				{
+					this._ImageURL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetTransactionsResult
+	{
+		
+		private int _TransactionID;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private System.Nullable<int> _AgentID;
+		
+		private System.Nullable<int> _CustomerID;
+		
+		private System.Nullable<int> _PropertyID;
+		
+		private System.Nullable<decimal> _Amount;
+		
+		private string _Status;
+		
+		public sp_GetTransactionsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="Int NOT NULL")]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgentID", DbType="Int")]
+		public System.Nullable<int> AgentID
+		{
+			get
+			{
+				return this._AgentID;
+			}
+			set
+			{
+				if ((this._AgentID != value))
+				{
+					this._AgentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerID", DbType="Int")]
+		public System.Nullable<int> CustomerID
+		{
+			get
+			{
+				return this._CustomerID;
+			}
+			set
+			{
+				if ((this._CustomerID != value))
+				{
+					this._CustomerID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyID", DbType="Int")]
+		public System.Nullable<int> PropertyID
+		{
+			get
+			{
+				return this._PropertyID;
+			}
+			set
+			{
+				if ((this._PropertyID != value))
+				{
+					this._PropertyID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(50)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
 				}
 			}
 		}
