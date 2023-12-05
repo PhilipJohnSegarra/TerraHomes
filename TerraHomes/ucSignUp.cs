@@ -12,13 +12,10 @@ namespace TerraHomes
 {
     public partial class ucSignUp : UserControl
     {
-        User userTBL;
-
         public ucSignUp()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            userTBL = new User();
         }
 
         private void llLogIn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -34,14 +31,13 @@ namespace TerraHomes
         {
             try
             {
-                UsersDB.InsertNewAdmin(userTBL, txtNewEmail.Text, txtNewUserName.Text, txtConfirmPassword.Text);
+                UsersDB.InsertNewAdmin(txtNewEmail.Text, txtNewUserName.Text, txtConfirmPassword.Text);
                 MessageBox.Show("Account Created Successfully");
             }
             catch(Exception a)
             {
                 MessageBox.Show(a.Message);
             }
-            
         }
     }
 }
