@@ -30,36 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucPropertyThumbnail));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblOwner = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.btnView = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblPropertyName = new System.Windows.Forms.Label();
+            this.pbPropImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPropImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.BorderRadius = 6;
-            this.guna2GradientPanel1.Controls.Add(this.label9);
+            this.guna2GradientPanel1.Controls.Add(this.lblOwner);
             this.guna2GradientPanel1.Controls.Add(this.label8);
-            this.guna2GradientPanel1.Controls.Add(this.label5);
-            this.guna2GradientPanel1.Controls.Add(this.label6);
-            this.guna2GradientPanel1.Controls.Add(this.label7);
+            this.guna2GradientPanel1.Controls.Add(this.lblStatus);
+            this.guna2GradientPanel1.Controls.Add(this.lblType);
+            this.guna2GradientPanel1.Controls.Add(this.lblPrice);
             this.guna2GradientPanel1.Controls.Add(this.btnView);
             this.guna2GradientPanel1.Controls.Add(this.label4);
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.label2);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
-            this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2GradientPanel1.Controls.Add(this.lblPropertyName);
+            this.guna2GradientPanel1.Controls.Add(this.pbPropImage);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.White;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
@@ -69,18 +69,18 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(305, 373);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
-            // label9
+            // lblOwner
             // 
-            this.label9.AutoEllipsis = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(148, 277);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 20);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Philip John B. Segarra";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblOwner.AutoEllipsis = true;
+            this.lblOwner.BackColor = System.Drawing.Color.Transparent;
+            this.lblOwner.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOwner.ForeColor = System.Drawing.Color.Black;
+            this.lblOwner.Location = new System.Drawing.Point(148, 277);
+            this.lblOwner.Name = "lblOwner";
+            this.lblOwner.Size = new System.Drawing.Size(143, 20);
+            this.lblOwner.TabIndex = 10;
+            this.lblOwner.Text = "Philip John B. Segarra";
+            this.lblOwner.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label8
             // 
@@ -93,41 +93,41 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Assigned to:";
             // 
-            // label5
+            // lblStatus
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(148, 257);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Available";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblStatus.Location = new System.Drawing.Point(148, 257);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(143, 20);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "Available";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label6
+            // lblType
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(145, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 20);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Forsale";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblType.BackColor = System.Drawing.Color.Transparent;
+            this.lblType.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.ForeColor = System.Drawing.Color.Black;
+            this.lblType.Location = new System.Drawing.Point(145, 237);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(146, 20);
+            this.lblType.TabIndex = 7;
+            this.lblType.Text = "Forsale";
+            this.lblType.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label7
+            // lblPrice
             // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(134, 217);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "999999999";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblPrice.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.Black;
+            this.lblPrice.Location = new System.Drawing.Point(134, 217);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(157, 20);
+            this.lblPrice.TabIndex = 6;
+            this.lblPrice.Text = "999999999";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnView
             // 
@@ -183,31 +183,31 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Price:";
             // 
-            // label1
+            // lblPropertyName
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 12);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.label1.Size = new System.Drawing.Size(305, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "3-Bedroom 2-Bathroom Residence\r\n\r\n\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPropertyName.AutoEllipsis = true;
+            this.lblPropertyName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPropertyName.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPropertyName.Location = new System.Drawing.Point(0, 12);
+            this.lblPropertyName.Name = "lblPropertyName";
+            this.lblPropertyName.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.lblPropertyName.Size = new System.Drawing.Size(305, 26);
+            this.lblPropertyName.TabIndex = 1;
+            this.lblPropertyName.Text = "3-Bedroom 2-Bathroom Residence\r\n\r\n\r\n";
+            this.lblPropertyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2PictureBox1
+            // pbPropImage
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.InitialImage")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(16, 43);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(275, 156);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
+            this.pbPropImage.BackColor = System.Drawing.Color.Transparent;
+            this.pbPropImage.Image = ((System.Drawing.Image)(resources.GetObject("pbPropImage.Image")));
+            this.pbPropImage.ImageRotate = 0F;
+            this.pbPropImage.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbPropImage.InitialImage")));
+            this.pbPropImage.Location = new System.Drawing.Point(16, 43);
+            this.pbPropImage.Name = "pbPropImage";
+            this.pbPropImage.Size = new System.Drawing.Size(275, 156);
+            this.pbPropImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPropImage.TabIndex = 0;
+            this.pbPropImage.TabStop = false;
             // 
             // ucPropertyThumbnail
             // 
@@ -219,7 +219,7 @@
             this.Size = new System.Drawing.Size(308, 376);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPropImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,16 +227,16 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2PictureBox pbPropImage;
+        private System.Windows.Forms.Label lblPropertyName;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblPrice;
         private Guna.UI2.WinForms.Guna2Button btnView;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblOwner;
         private System.Windows.Forms.Label label8;
     }
 }

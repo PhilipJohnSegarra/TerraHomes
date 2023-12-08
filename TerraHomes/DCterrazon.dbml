@@ -176,11 +176,6 @@
     <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_InsertPropertyImages" Method="sp_InsertPropertyImages">
-    <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="imageURL" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_InsertCustomers" Method="sp_InsertCustomers">
     <Parameter Name="fname" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="lname" Type="System.String" DbType="VarChar(50)" />
@@ -208,15 +203,6 @@
     <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_InsertUsers" Method="sp_InsertUsers">
-    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="firstname" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="lastname" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_UpdateAgentProperties" Method="sp_UpdateAgentProperties">
     <Parameter Name="agentpropID" Type="System.Int32" DbType="Int" />
     <Parameter Name="agentID" Type="System.Int32" DbType="Int" />
@@ -242,17 +228,6 @@
     <Parameter Name="address" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateProperties" Method="sp_UpdateProperties">
-    <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="propname" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="address" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="description" Type="System.String" DbType="VarChar(550)" />
-    <Parameter Name="type" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="status" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="price" Type="System.Decimal" DbType="Decimal(18,2)" />
-    <Parameter Name="size" Type="System.String" DbType="VarChar(150)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_UpdatePropertyImages" Method="sp_UpdatePropertyImages">
     <Parameter Name="imageID" Type="System.Int32" DbType="Int" />
     <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
@@ -267,6 +242,33 @@
     <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
     <Parameter Name="amount" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Parameter Name="status" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertPropertyImages" Method="sp_InsertPropertyImages">
+    <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="imageURL" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertUsers" Method="sp_InsertUsers">
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="firstname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lastname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="imageURL" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateProperties" Method="sp_UpdateProperties">
+    <Parameter Name="propertyID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="propname" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="address" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="description" Type="System.String" DbType="VarChar(550)" />
+    <Parameter Name="type" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="price" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="size" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="ownerID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

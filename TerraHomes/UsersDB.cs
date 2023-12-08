@@ -40,11 +40,11 @@ namespace TerraHomes
             }
         }
         //Inserts a new user to the users table
-        public static void InsertNewUser(string username, string password,string firstname, string lastname, string email, string usertype)
+        public static void InsertNewUser(string username, string password,string firstname, string lastname, string email, string usertype, string imageURL)
         {
             using (_dbContext = new DCterrazonDataContext())
             {
-                _dbContext.sp_InsertUsers(username, password, firstname, lastname, email, usertype);
+                _dbContext.sp_InsertUsers(username, password, firstname, lastname, email, usertype, imageURL);
             }
         }
         //Updates a specified user on the users table

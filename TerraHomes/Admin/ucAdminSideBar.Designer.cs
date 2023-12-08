@@ -108,7 +108,7 @@
             this.gbtnAgents.PressedColor = System.Drawing.Color.White;
             this.gbtnAgents.Size = new System.Drawing.Size(195, 37);
             this.gbtnAgents.TabIndex = 2;
-            this.gbtnAgents.Text = "Agents";
+            this.gbtnAgents.Text = "Accounts";
             this.gbtnAgents.TextOffset = new System.Drawing.Point(10, 0);
             this.gbtnAgents.Click += new System.EventHandler(this.gbtnAgents_Click);
             // 

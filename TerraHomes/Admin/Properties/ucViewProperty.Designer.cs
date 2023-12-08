@@ -36,8 +36,14 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtPropertyPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
+            this.cbAssignees = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPropertyId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtPropertyDesc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPropertyName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,14 +56,8 @@
             this.cbPropertyStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPropertyId = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbAssignees = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
-            this.txtPropertyPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbPropertyImages)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,7 @@
             this.pbPropertyImages.Location = new System.Drawing.Point(90, 55);
             this.pbPropertyImages.Name = "pbPropertyImages";
             this.pbPropertyImages.Size = new System.Drawing.Size(795, 452);
+            this.pbPropertyImages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPropertyImages.TabIndex = 0;
             this.pbPropertyImages.TabStop = false;
             // 
@@ -111,6 +112,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(85, 166);
             this.btnPrevious.TabIndex = 22;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -172,6 +174,7 @@
             this.btnDelete.Size = new System.Drawing.Size(98, 31);
             this.btnDelete.TabIndex = 24;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // guna2Panel1
             // 
@@ -209,22 +212,145 @@
             this.guna2Panel1.Size = new System.Drawing.Size(794, 893);
             this.guna2Panel1.TabIndex = 26;
             // 
-            // label1
+            // txtPropertyPrice
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Fredoka Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Property Information";
+            this.txtPropertyPrice.BackColor = System.Drawing.Color.Transparent;
+            this.txtPropertyPrice.BorderColor = System.Drawing.Color.Black;
+            this.txtPropertyPrice.BorderRadius = 6;
+            this.txtPropertyPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPropertyPrice.DefaultText = "";
+            this.txtPropertyPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPropertyPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPropertyPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPropertyPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPropertyPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPropertyPrice.Font = new System.Drawing.Font("Fredoka", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPropertyPrice.ForeColor = System.Drawing.Color.Black;
+            this.txtPropertyPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPropertyPrice.Location = new System.Drawing.Point(168, 730);
+            this.txtPropertyPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtPropertyPrice.Name = "txtPropertyPrice";
+            this.txtPropertyPrice.PasswordChar = '\0';
+            this.txtPropertyPrice.PlaceholderText = "";
+            this.txtPropertyPrice.ReadOnly = true;
+            this.txtPropertyPrice.SelectedText = "";
+            this.txtPropertyPrice.Size = new System.Drawing.Size(570, 45);
+            this.txtPropertyPrice.TabIndex = 34;
+            this.txtPropertyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2Panel2
+            // label10
             // 
-            this.guna2Panel2.Location = new System.Drawing.Point(89, 1431);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(795, 44);
-            this.guna2Panel2.TabIndex = 27;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Fredoka", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(87, 730);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 30);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Price:";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.btnReset.BorderRadius = 6;
+            this.btnReset.BorderThickness = 1;
+            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReset.Enabled = false;
+            this.btnReset.FillColor = System.Drawing.Color.Transparent;
+            this.btnReset.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.btnReset.Location = new System.Drawing.Point(268, 823);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(223, 39);
+            this.btnReset.TabIndex = 32;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BorderRadius = 6;
+            this.btnSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSubmit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSubmit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSubmit.Enabled = false;
+            this.btnSubmit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.btnSubmit.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(499, 823);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(239, 39);
+            this.btnSubmit.TabIndex = 31;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // cbAssignees
+            // 
+            this.cbAssignees.BackColor = System.Drawing.Color.Transparent;
+            this.cbAssignees.BorderRadius = 6;
+            this.cbAssignees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbAssignees.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbAssignees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAssignees.Enabled = false;
+            this.cbAssignees.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbAssignees.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbAssignees.Font = new System.Drawing.Font("Fredoka", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAssignees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbAssignees.ItemHeight = 30;
+            this.cbAssignees.Location = new System.Drawing.Point(168, 653);
+            this.cbAssignees.Name = "cbAssignees";
+            this.cbAssignees.Size = new System.Drawing.Size(570, 36);
+            this.cbAssignees.TabIndex = 30;
+            this.cbAssignees.SelectedIndexChanged += new System.EventHandler(this.cbAssignees_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(61, 660);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Assigned to:";
+            // 
+            // txtPropertyId
+            // 
+            this.txtPropertyId.BackColor = System.Drawing.Color.Transparent;
+            this.txtPropertyId.BorderColor = System.Drawing.Color.Black;
+            this.txtPropertyId.BorderRadius = 6;
+            this.txtPropertyId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPropertyId.DefaultText = "";
+            this.txtPropertyId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPropertyId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPropertyId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPropertyId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPropertyId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPropertyId.Font = new System.Drawing.Font("Fredoka", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPropertyId.ForeColor = System.Drawing.Color.Black;
+            this.txtPropertyId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPropertyId.Location = new System.Drawing.Point(168, 71);
+            this.txtPropertyId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPropertyId.Name = "txtPropertyId";
+            this.txtPropertyId.PasswordChar = '\0';
+            this.txtPropertyId.PlaceholderText = "";
+            this.txtPropertyId.ReadOnly = true;
+            this.txtPropertyId.SelectedText = "";
+            this.txtPropertyId.Size = new System.Drawing.Size(570, 31);
+            this.txtPropertyId.TabIndex = 27;
+            this.txtPropertyId.TextChanged += new System.EventHandler(this.txtPropertyId_TextChanged);
+            this.txtPropertyId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPropertyId_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(36, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(94, 20);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Property ID:";
             // 
             // txtPropertyDesc
             // 
@@ -436,143 +562,22 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Status:";
             // 
-            // txtPropertyId
+            // label1
             // 
-            this.txtPropertyId.BackColor = System.Drawing.Color.Transparent;
-            this.txtPropertyId.BorderColor = System.Drawing.Color.Black;
-            this.txtPropertyId.BorderRadius = 6;
-            this.txtPropertyId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPropertyId.DefaultText = "";
-            this.txtPropertyId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPropertyId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPropertyId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPropertyId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPropertyId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPropertyId.Font = new System.Drawing.Font("Fredoka", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPropertyId.ForeColor = System.Drawing.Color.Black;
-            this.txtPropertyId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPropertyId.Location = new System.Drawing.Point(168, 71);
-            this.txtPropertyId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPropertyId.Name = "txtPropertyId";
-            this.txtPropertyId.PasswordChar = '\0';
-            this.txtPropertyId.PlaceholderText = "";
-            this.txtPropertyId.ReadOnly = true;
-            this.txtPropertyId.SelectedText = "";
-            this.txtPropertyId.Size = new System.Drawing.Size(570, 31);
-            this.txtPropertyId.TabIndex = 27;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Fredoka Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Property Information";
             // 
-            // label8
+            // guna2Panel2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 20);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Property ID:";
-            // 
-            // cbAssignees
-            // 
-            this.cbAssignees.BackColor = System.Drawing.Color.Transparent;
-            this.cbAssignees.BorderRadius = 6;
-            this.cbAssignees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbAssignees.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbAssignees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAssignees.Enabled = false;
-            this.cbAssignees.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbAssignees.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbAssignees.Font = new System.Drawing.Font("Fredoka", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAssignees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbAssignees.ItemHeight = 30;
-            this.cbAssignees.Location = new System.Drawing.Point(168, 653);
-            this.cbAssignees.Name = "cbAssignees";
-            this.cbAssignees.Size = new System.Drawing.Size(570, 36);
-            this.cbAssignees.StartIndex = 0;
-            this.cbAssignees.TabIndex = 30;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(61, 660);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 20);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Assigned to:";
-            // 
-            // btnReset
-            // 
-            this.btnReset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.btnReset.BorderRadius = 6;
-            this.btnReset.BorderThickness = 1;
-            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReset.Enabled = false;
-            this.btnReset.FillColor = System.Drawing.Color.Transparent;
-            this.btnReset.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.btnReset.Location = new System.Drawing.Point(268, 823);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(223, 39);
-            this.btnReset.TabIndex = 32;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BorderRadius = 6;
-            this.btnSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSubmit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSubmit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSubmit.Enabled = false;
-            this.btnSubmit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.btnSubmit.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(499, 823);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(239, 39);
-            this.btnSubmit.TabIndex = 31;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
-            // txtPropertyPrice
-            // 
-            this.txtPropertyPrice.BackColor = System.Drawing.Color.Transparent;
-            this.txtPropertyPrice.BorderColor = System.Drawing.Color.Black;
-            this.txtPropertyPrice.BorderRadius = 6;
-            this.txtPropertyPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPropertyPrice.DefaultText = "";
-            this.txtPropertyPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPropertyPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPropertyPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPropertyPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPropertyPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPropertyPrice.Font = new System.Drawing.Font("Fredoka", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPropertyPrice.ForeColor = System.Drawing.Color.Black;
-            this.txtPropertyPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPropertyPrice.Location = new System.Drawing.Point(168, 730);
-            this.txtPropertyPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.txtPropertyPrice.Name = "txtPropertyPrice";
-            this.txtPropertyPrice.PasswordChar = '\0';
-            this.txtPropertyPrice.PlaceholderText = "";
-            this.txtPropertyPrice.ReadOnly = true;
-            this.txtPropertyPrice.SelectedText = "";
-            this.txtPropertyPrice.Size = new System.Drawing.Size(570, 45);
-            this.txtPropertyPrice.TabIndex = 34;
-            this.txtPropertyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Fredoka", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(87, 730);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 30);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Price:";
+            this.guna2Panel2.Location = new System.Drawing.Point(89, 1431);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(795, 44);
+            this.guna2Panel2.TabIndex = 27;
             // 
             // ucViewProperty
             // 
@@ -588,7 +593,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pbPropertyImages);
             this.Name = "ucViewProperty";
-            this.Size = new System.Drawing.Size(966, 581);
+            this.Size = new System.Drawing.Size(949, 564);
             this.Load += new System.EventHandler(this.ucViewProperty_Load);
             this.VisibleChanged += new System.EventHandler(this.ucViewProperty_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pbPropertyImages)).EndInit();
@@ -599,8 +604,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2PictureBox pbPropertyImages;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnPrevious;
         private Guna.UI2.WinForms.Guna2Button btnNext;
@@ -609,25 +612,26 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtPropertyId;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox txtPropertyDesc;
-        private Guna.UI2.WinForms.Guna2TextBox txtPropertyName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox txtPropertyAddress;
-        private Guna.UI2.WinForms.Guna2TextBox txtPropertySize;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2ComboBox cbPropertyStatus;
-        private Guna.UI2.WinForms.Guna2ComboBox cbType;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2ComboBox cbAssignees;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2Button btnReset;
-        private Guna.UI2.WinForms.Guna2Button btnSubmit;
-        private Guna.UI2.WinForms.Guna2TextBox txtPropertyPrice;
         private System.Windows.Forms.Label label10;
+        public Guna.UI2.WinForms.Guna2PictureBox pbPropertyImages;
+        public Guna.UI2.WinForms.Guna2TextBox txtPropertyId;
+        public Guna.UI2.WinForms.Guna2TextBox txtPropertyDesc;
+        public Guna.UI2.WinForms.Guna2TextBox txtPropertyName;
+        public Guna.UI2.WinForms.Guna2TextBox txtPropertyAddress;
+        public Guna.UI2.WinForms.Guna2TextBox txtPropertySize;
+        public Guna.UI2.WinForms.Guna2ComboBox cbPropertyStatus;
+        public Guna.UI2.WinForms.Guna2ComboBox cbType;
+        public Guna.UI2.WinForms.Guna2ComboBox cbAssignees;
+        public Guna.UI2.WinForms.Guna2TextBox txtPropertyPrice;
+        public Guna.UI2.WinForms.Guna2Button btnReset;
+        public Guna.UI2.WinForms.Guna2Button btnSubmit;
     }
 }

@@ -233,13 +233,6 @@ namespace TerraHomes
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertPropertyImages")]
-		public int sp_InsertPropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string imageURL)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, imageURL);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertCustomers")]
 		public int sp_InsertCustomers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string address)
 		{
@@ -258,13 +251,6 @@ namespace TerraHomes
 		public int sp_InsertTransactions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string status)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date, agentID, customerID, propertyID, amount, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUsers")]
-		public int sp_InsertUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, firstname, lastname, email, usertype);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -289,13 +275,6 @@ namespace TerraHomes
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateProperties")]
-		public int sp_UpdateProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string propname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(550)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string size)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, propname, address, description, type, status, price, size);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdatePropertyImages")]
 		public int sp_UpdatePropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> imageID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string imageURL)
 		{
@@ -307,6 +286,27 @@ namespace TerraHomes
 		public int sp_UpdateTransactions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> transactionID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string status)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), transactionID, date, agentID, customerID, propertyID, amount, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertPropertyImages")]
+		public int sp_InsertPropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(500)")] string imageURL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, imageURL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertUsers")]
+		public int sp_InsertUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(500)")] string imageURL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password, firstname, lastname, email, usertype, imageURL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateProperties")]
+		public int sp_UpdateProperties([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propertyID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string propname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(250)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(550)")] string description, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string type, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> price, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string size, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ownerID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, propname, address, description, type, status, price, size, ownerID);
 			return ((int)(result.ReturnValue));
 		}
 	}

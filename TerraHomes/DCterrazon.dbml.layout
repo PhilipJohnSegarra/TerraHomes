@@ -53,7 +53,7 @@
         <elementListCompartment Id="f50040b7-e780-4cf4-9b51-205a17fc979b" absoluteBounds="6.765, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.75 : 2.42714680989583); (6.75 : 2.42714680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.75 : 2.42714680989583); (4.16666666666667 : 2.42714680989583 : JumpStart); (4.33333333333333 : 2.42714680989583 : JumpEnd); (6.75 : 2.42714680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCterrazonDataContext/User/User_Transaction" />
       <nodes>
         <classShapeMoniker Id="d4a1bdb3-caad-45ed-9be5-7a62400a55e4" />
