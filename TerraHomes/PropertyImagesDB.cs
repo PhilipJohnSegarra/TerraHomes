@@ -38,5 +38,13 @@ namespace TerraHomes
                 _dbContext.sp_DeletePropertyImages(imageID);
             }
         }
+
+        public static void DeleteAllPropImages(int propertyID)
+        {
+            using(_dbContext = new DCterrazonDataContext())
+            {
+                _dbContext.sp_DeleteAllPropertyImages(propertyID);
+            }
+        }
     }
 }

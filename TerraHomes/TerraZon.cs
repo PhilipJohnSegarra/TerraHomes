@@ -16,13 +16,15 @@ namespace TerraHomes
 {
     public partial class frmTerraZon : Form
     {
+        public int UserID {  get; set; }
         ucAdminDashboard dashboard;
         ucFinance finance;
         public ucProperties properties;
         ucAgents agents;
-        public frmTerraZon()
+        public frmTerraZon(int UserID)
         {
             InitializeComponent();
+            this.UserID = UserID;
             this.DoubleBuffered = true;
 
             //Instantiate the User Controls for content

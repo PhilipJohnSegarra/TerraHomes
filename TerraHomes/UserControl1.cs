@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TerraHomes.Agents;
 
 namespace TerraHomes
 {
@@ -14,6 +15,7 @@ namespace TerraHomes
     {
         frmTerraZon terraZon;
         DCterrazonDataContext db;
+        AgentsForm agentform;
         public UserControl1()
         {
             InitializeComponent();
@@ -31,20 +33,38 @@ namespace TerraHomes
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            terraZon = new frmTerraZon();
-            var users = from user in db.Users
-                        where user.Username == txtUsername.Text && user.Password == txtPassword.Text
-                        select user;
+            try
+            {
+                var users = from user in db.Users
+                            where user.Username == txtUsername.Text && user.Password == DataSecure.Encrypt(txtPassword.Text)
+                            select user;
 
-            if(users.Any())
-            {
-                this.Parent.Hide();
-                terraZon.Show();
+                if (users.First().UserType == "Admin")
+                {
+                    this.Parent.Hide();
+                    terraZon = new frmTerraZon(users.First().UserID);
+                    terraZon.ucTopPanel1.userID = users.First().UserID;
+                    terraZon.Show();
+                }
+                else if (users.First().UserType == "Agent")
+                {
+                    this.Parent.Hide();
+                    agentform = new AgentsForm(users.First().UserID);
+                    agentform.ucTopPanel1.userID = users.First().UserID;
+                    agentform.agentDashboard.userID = users.First().UserID;
+                    agentform.Show();
+
+                }
+                else if(!users.Any())
+                {
+                    MessageBox.Show("Account Does Not Exist or Username and Password are incorrect");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Account Does Not Exist");
+                MessageBox.Show("Account Does Not Exist or Username and Password are incorrect");
             }
+            
 
         }
     }

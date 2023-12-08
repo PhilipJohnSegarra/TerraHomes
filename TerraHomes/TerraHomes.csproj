@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Agents\ucAddNewAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Agents\ucAddNewAccount.Designer.cs">
+      <DependentUpon>ucAddNewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Agents\ucAgents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="Admin\Agents\ucAgentsThumbnail.Designer.cs">
       <DependentUpon>ucAgentsThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Agents\ucModifyAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Agents\ucModifyAccount.Designer.cs">
+      <DependentUpon>ucModifyAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\CardsPanel.cs" />
     <Compile Include="Admin\Finance\ucFinance.cs">
@@ -119,7 +131,44 @@
       <DependentUpon>ucAdminSideBar.cs</DependentUpon>
     </Compile>
     <Compile Include="AgentsPropertyDB.cs" />
+    <Compile Include="AgentsView\AgentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentsView\AgentsForm.Designer.cs">
+      <DependentUpon>AgentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentsView\AgentSideBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentsView\AgentSideBar.Designer.cs">
+      <DependentUpon>AgentSideBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentsView\Dashboard\AgentDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentsView\Dashboard\AgentDashboard.Designer.cs">
+      <DependentUpon>AgentDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentsView\Finance\ucAgentFinance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentsView\Finance\ucAgentFinance.Designer.cs">
+      <DependentUpon>ucAgentFinance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentsView\Properties\ucAgentProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentsView\Properties\ucAgentProperties.Designer.cs">
+      <DependentUpon>ucAgentProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentsView\Properties\ucSellProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentsView\Properties\ucSellProperty.Designer.cs">
+      <DependentUpon>ucSellProperty.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomersDB.cs" />
+    <Compile Include="DataSecure.cs" />
     <Compile Include="DCterrazon.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,11 +216,17 @@
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UsersDB.cs" />
+    <EmbeddedResource Include="Admin\Agents\ucAddNewAccount.resx">
+      <DependentUpon>ucAddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Agents\ucAgents.resx">
       <DependentUpon>ucAgents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Agents\ucAgentsThumbnail.resx">
       <DependentUpon>ucAgentsThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Agents\ucModifyAccount.resx">
+      <DependentUpon>ucModifyAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Finance\ucFinance.resx">
       <DependentUpon>ucFinance.cs</DependentUpon>
@@ -193,6 +248,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ucAdminSideBar.resx">
       <DependentUpon>ucAdminSideBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentsView\AgentsForm.resx">
+      <DependentUpon>AgentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentsView\AgentSideBar.resx">
+      <DependentUpon>AgentSideBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentsView\Dashboard\AgentDashboard.resx">
+      <DependentUpon>AgentDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentsView\Finance\ucAgentFinance.resx">
+      <DependentUpon>ucAgentFinance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentsView\Properties\ucAgentProperties.resx">
+      <DependentUpon>ucAgentProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentsView\Properties\ucSellProperty.resx">
+      <DependentUpon>ucSellProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -247,7 +320,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Agents\" />
+    <Folder Include="AgentsView\Profile\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,6 @@
-﻿namespace TerraHomes
+﻿namespace TerraHomes.Agents
 {
-    partial class frmTerraZon
+    partial class AgentsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gpnlMainPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.ucAdminSideBar1 = new TerraHomes.Admin.ucAdminSideBar();
             this.ucTopPanel1 = new TerraHomes.ucTopPanel();
+            this.agentSideBar1 = new TerraHomes.AgentsView.AgentSideBar();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.gpnlMainPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // gpnlMainPanel
-            // 
-            this.gpnlMainPanel.AutoSize = true;
-            this.gpnlMainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.gpnlMainPanel.BackColor = System.Drawing.Color.Transparent;
-            this.gpnlMainPanel.Controls.Add(this.ucAdminSideBar1);
-            this.gpnlMainPanel.Controls.Add(this.ucTopPanel1);
-            this.gpnlMainPanel.Controls.Add(this.pnlContent);
-            this.gpnlMainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gpnlMainPanel.FillColor = System.Drawing.Color.Transparent;
-            this.gpnlMainPanel.FillColor2 = System.Drawing.Color.Transparent;
-            this.gpnlMainPanel.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.gpnlMainPanel.Location = new System.Drawing.Point(0, 0);
-            this.gpnlMainPanel.Name = "gpnlMainPanel";
-            this.gpnlMainPanel.Size = new System.Drawing.Size(1253, 858);
-            this.gpnlMainPanel.TabIndex = 0;
-            // 
-            // ucAdminSideBar1
-            // 
-            this.ucAdminSideBar1.BackColor = System.Drawing.Color.Transparent;
-            this.ucAdminSideBar1.Location = new System.Drawing.Point(0, 92);
-            this.ucAdminSideBar1.Name = "ucAdminSideBar1";
-            this.ucAdminSideBar1.Size = new System.Drawing.Size(197, 766);
-            this.ucAdminSideBar1.TabIndex = 0;
             // 
             // ucTopPanel1
             // 
@@ -69,39 +42,45 @@
             this.ucTopPanel1.Location = new System.Drawing.Point(0, 0);
             this.ucTopPanel1.Name = "ucTopPanel1";
             this.ucTopPanel1.Size = new System.Drawing.Size(1253, 91);
-            this.ucTopPanel1.TabIndex = 20;
+            this.ucTopPanel1.TabIndex = 21;
             this.ucTopPanel1.userID = 0;
+            // 
+            // agentSideBar1
+            // 
+            this.agentSideBar1.BackColor = System.Drawing.Color.Transparent;
+            this.agentSideBar1.Location = new System.Drawing.Point(0, 92);
+            this.agentSideBar1.Name = "agentSideBar1";
+            this.agentSideBar1.Size = new System.Drawing.Size(197, 766);
+            this.agentSideBar1.TabIndex = 22;
             // 
             // pnlContent
             // 
             this.pnlContent.Location = new System.Drawing.Point(198, 92);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1055, 766);
-            this.pnlContent.TabIndex = 4;
+            this.pnlContent.TabIndex = 23;
             // 
-            // frmTerraZon
+            // AgentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1253, 858);
-            this.Controls.Add(this.gpnlMainPanel);
+            this.Controls.Add(this.pnlContent);
+            this.Controls.Add(this.agentSideBar1);
+            this.Controls.Add(this.ucTopPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmTerraZon";
+            this.Name = "AgentsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TerraZon";
-            this.Load += new System.EventHandler(this.frmTerraZon_Load);
-            this.gpnlMainPanel.ResumeLayout(false);
-            this.gpnlMainPanel.PerformLayout();
+            this.Text = "AgentsForm";
+            this.Load += new System.EventHandler(this.AgentsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Admin.ucAdminSideBar ucAdminSideBar1;
-        public Guna.UI2.WinForms.Guna2GradientPanel gpnlMainPanel;
+        private AgentsView.AgentSideBar agentSideBar1;
         public System.Windows.Forms.Panel pnlContent;
         public ucTopPanel ucTopPanel1;
     }

@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAgentsThumbnail));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -47,14 +47,14 @@
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.BorderRadius = 6;
-            this.guna2GradientPanel1.Controls.Add(this.label5);
-            this.guna2GradientPanel1.Controls.Add(this.label6);
-            this.guna2GradientPanel1.Controls.Add(this.label7);
+            this.guna2GradientPanel1.Controls.Add(this.lblUserType);
+            this.guna2GradientPanel1.Controls.Add(this.lblEmail);
+            this.guna2GradientPanel1.Controls.Add(this.lblID);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.Controls.Add(this.label4);
             this.guna2GradientPanel1.Controls.Add(this.label3);
             this.guna2GradientPanel1.Controls.Add(this.label2);
-            this.guna2GradientPanel1.Controls.Add(this.label1);
+            this.guna2GradientPanel1.Controls.Add(this.lblName);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.White;
@@ -65,41 +65,41 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(305, 347);
             this.guna2GradientPanel1.TabIndex = 1;
             // 
-            // label5
+            // lblUserType
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(132, 257);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "09123456789";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblUserType.BackColor = System.Drawing.Color.Transparent;
+            this.lblUserType.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserType.ForeColor = System.Drawing.Color.Black;
+            this.lblUserType.Location = new System.Drawing.Point(132, 257);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(159, 20);
+            this.lblUserType.TabIndex = 8;
+            this.lblUserType.Text = "09123456789";
+            this.lblUserType.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label6
+            // lblEmail
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(132, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 20);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Juan@gmail.com";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(132, 237);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(159, 20);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "Juan@gmail.com";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label7
+            // lblID
             // 
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(126, 217);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "999999999";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
+            this.lblID.Font = new System.Drawing.Font("Fredoka", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.Black;
+            this.lblID.Location = new System.Drawing.Point(126, 217);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(165, 20);
+            this.lblID.TabIndex = 6;
+            this.lblID.Text = "999999999";
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // guna2Button1
             // 
@@ -124,6 +124,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(140, 43);
             this.guna2Button1.TabIndex = 5;
             this.guna2Button1.Text = "See more";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label4
             // 
@@ -132,9 +133,9 @@
             this.label4.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 257);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Phone:";
+            this.label4.Text = "Usertype:";
             // 
             // label3
             // 
@@ -158,16 +159,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "ID No.:";
             // 
-            // label1
+            // lblName
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Fredoka Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Juan dela Cruz";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Fredoka Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(3, 12);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(299, 26);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Juan dela Cruz";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2PictureBox1
             // 
@@ -190,6 +191,7 @@
             this.Controls.Add(this.guna2GradientPanel1);
             this.Name = "ucAgentsThumbnail";
             this.Size = new System.Drawing.Size(308, 350);
+            this.Load += new System.EventHandler(this.ucAgentsThumbnail_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -200,14 +202,14 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblUserType;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblID;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

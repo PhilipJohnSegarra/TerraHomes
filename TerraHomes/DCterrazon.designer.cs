@@ -30,9 +30,6 @@ namespace TerraHomes
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     partial void InsertAgentsProperty(AgentsProperty instance);
     partial void UpdateAgentsProperty(AgentsProperty instance);
     partial void DeleteAgentsProperty(AgentsProperty instance);
@@ -48,6 +45,9 @@ namespace TerraHomes
     partial void InsertCustomer(Customer instance);
     partial void UpdateCustomer(Customer instance);
     partial void DeleteCustomer(Customer instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     #endregion
 		
 		public DCterrazonDataContext() : 
@@ -78,14 +78,6 @@ namespace TerraHomes
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<User> Users
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
 		}
 		
 		public System.Data.Linq.Table<AgentsProperty> AgentsProperties
@@ -125,6 +117,14 @@ namespace TerraHomes
 			get
 			{
 				return this.GetTable<Customer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User> Users
+		{
+			get
+			{
+				return this.GetTable<User>();
 			}
 		}
 		
@@ -205,13 +205,6 @@ namespace TerraHomes
 			return ((ISingleResult<sp_GetPropertiesResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetUsers")]
-		public ISingleResult<sp_GetUsersResult> sp_GetUsers()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<sp_GetUsersResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetPropertyImages")]
 		public ISingleResult<sp_GetPropertyImagesResult> sp_GetPropertyImages()
 		{
@@ -261,13 +254,6 @@ namespace TerraHomes
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsers")]
-		public int sp_UpdateUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, username, password, firstname, lastname, email, usertype);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateCustomers")]
 		public int sp_UpdateCustomers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> customerID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string fname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string address)
 		{
@@ -309,267 +295,33 @@ namespace TerraHomes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyID, propname, address, description, type, status, price, size, ownerID);
 			return ((int)(result.ReturnValue));
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserID;
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _Firstname;
-		
-		private string _Lastname;
-		
-		private string _Email;
-		
-		private string _UserType;
-		
-		private EntitySet<Property> _Properties;
-		
-		private EntitySet<Transaction> _Transactions;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnUsernameChanging(string value);
-    partial void OnUsernameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnFirstnameChanging(string value);
-    partial void OnFirstnameChanged();
-    partial void OnLastnameChanging(string value);
-    partial void OnLastnameChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnUserTypeChanging(string value);
-    partial void OnUserTypeChanged();
-    #endregion
-		
-		public User()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateUsers")]
+		public int sp_UpdateUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string firstname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lastname, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string usertype, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(500)")] string imageURL)
 		{
-			this._Properties = new EntitySet<Property>(new Action<Property>(this.attach_Properties), new Action<Property>(this.detach_Properties));
-			this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
-			OnCreated();
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, username, password, firstname, lastname, email, usertype, imageURL);
+			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserID
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetUsers")]
+		public ISingleResult<sp_GetUsersResult1> sp_GetUsers()
 		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this.OnUserIDChanging(value);
-					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetUsersResult1>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Username
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAllUsers")]
+		public ISingleResult<sp_GetAllUsersResult> sp_GetAllUsers()
 		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this.OnUsernameChanging(value);
-					this.SendPropertyChanging();
-					this._Username = value;
-					this.SendPropertyChanged("Username");
-					this.OnUsernameChanged();
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetAllUsersResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_DeleteAllPropertyImages")]
+		public int sp_DeleteAllPropertyImages([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> propID)
 		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
-		public string Firstname
-		{
-			get
-			{
-				return this._Firstname;
-			}
-			set
-			{
-				if ((this._Firstname != value))
-				{
-					this.OnFirstnameChanging(value);
-					this.SendPropertyChanging();
-					this._Firstname = value;
-					this.SendPropertyChanged("Firstname");
-					this.OnFirstnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
-		public string Lastname
-		{
-			get
-			{
-				return this._Lastname;
-			}
-			set
-			{
-				if ((this._Lastname != value))
-				{
-					this.OnLastnameChanging(value);
-					this.SendPropertyChanging();
-					this._Lastname = value;
-					this.SendPropertyChanged("Lastname");
-					this.OnLastnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="VarChar(50)")]
-		public string UserType
-		{
-			get
-			{
-				return this._UserType;
-			}
-			set
-			{
-				if ((this._UserType != value))
-				{
-					this.OnUserTypeChanging(value);
-					this.SendPropertyChanging();
-					this._UserType = value;
-					this.SendPropertyChanged("UserType");
-					this.OnUserTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Property", Storage="_Properties", ThisKey="UserID", OtherKey="OwnerID")]
-		public EntitySet<Property> Properties
-		{
-			get
-			{
-				return this._Properties;
-			}
-			set
-			{
-				this._Properties.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Transaction", Storage="_Transactions", ThisKey="UserID", OtherKey="AgentID")]
-		public EntitySet<Transaction> Transactions
-		{
-			get
-			{
-				return this._Transactions;
-			}
-			set
-			{
-				this._Transactions.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Properties(Property entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Properties(Property entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Transactions(Transaction entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Transactions(Transaction entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propID);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -581,11 +333,13 @@ namespace TerraHomes
 		
 		private int _AgentPropertyID;
 		
-		private string _AgentID;
+		private System.Nullable<int> _AgentID;
 		
 		private System.Nullable<int> _PropertyID;
 		
 		private EntityRef<Property> _Property;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -593,7 +347,7 @@ namespace TerraHomes
     partial void OnCreated();
     partial void OnAgentPropertyIDChanging(int value);
     partial void OnAgentPropertyIDChanged();
-    partial void OnAgentIDChanging(string value);
+    partial void OnAgentIDChanging(System.Nullable<int> value);
     partial void OnAgentIDChanged();
     partial void OnPropertyIDChanging(System.Nullable<int> value);
     partial void OnPropertyIDChanged();
@@ -602,6 +356,7 @@ namespace TerraHomes
 		public AgentsProperty()
 		{
 			this._Property = default(EntityRef<Property>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -625,8 +380,8 @@ namespace TerraHomes
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgentID", DbType="VarChar(50)")]
-		public string AgentID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgentID", DbType="Int")]
+		public System.Nullable<int> AgentID
 		{
 			get
 			{
@@ -636,6 +391,10 @@ namespace TerraHomes
 			{
 				if ((this._AgentID != value))
 				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnAgentIDChanging(value);
 					this.SendPropertyChanging();
 					this._AgentID = value;
@@ -699,6 +458,40 @@ namespace TerraHomes
 						this._PropertyID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Property");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_AgentsProperty", Storage="_User", ThisKey="AgentID", OtherKey="UserID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.AgentsProperties.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.AgentsProperties.Add(this);
+						this._AgentID = value.UserID;
+					}
+					else
+					{
+						this._AgentID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}
@@ -1274,11 +1067,11 @@ namespace TerraHomes
 		
 		private string _Status;
 		
-		private EntityRef<User> _User;
-		
 		private EntityRef<Property> _Property;
 		
 		private EntityRef<Customer> _Customer;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1302,9 +1095,9 @@ namespace TerraHomes
 		
 		public Transaction()
 		{
-			this._User = default(EntityRef<User>);
 			this._Property = default(EntityRef<Property>);
 			this._Customer = default(EntityRef<Customer>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -1460,40 +1253,6 @@ namespace TerraHomes
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Transaction", Storage="_User", ThisKey="AgentID", OtherKey="UserID", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Transactions.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Transactions.Add(this);
-						this._AgentID = value.UserID;
-					}
-					else
-					{
-						this._AgentID = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Property_Transaction", Storage="_Property", ThisKey="PropertyID", OtherKey="PropertyID", IsForeignKey=true)]
 		public Property Property
 		{
@@ -1558,6 +1317,40 @@ namespace TerraHomes
 						this._CustomerID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Customer");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Transaction", Storage="_User", ThisKey="AgentID", OtherKey="UserID", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Transactions.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Transactions.Add(this);
+						this._AgentID = value.UserID;
+					}
+					else
+					{
+						this._AgentID = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("User");
 				}
 			}
 		}
@@ -1790,6 +1583,320 @@ namespace TerraHomes
 		{
 			this.SendPropertyChanging();
 			entity.Customer = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserID;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Firstname;
+		
+		private string _Lastname;
+		
+		private string _Email;
+		
+		private string _UserType;
+		
+		private string _imageURL;
+		
+		private EntitySet<AgentsProperty> _AgentsProperties;
+		
+		private EntitySet<Property> _Properties;
+		
+		private EntitySet<Transaction> _Transactions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
+    partial void OnUsernameChanging(string value);
+    partial void OnUsernameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnFirstnameChanging(string value);
+    partial void OnFirstnameChanged();
+    partial void OnLastnameChanging(string value);
+    partial void OnLastnameChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnUserTypeChanging(string value);
+    partial void OnUserTypeChanged();
+    partial void OnimageURLChanging(string value);
+    partial void OnimageURLChanged();
+    #endregion
+		
+		public User()
+		{
+			this._AgentsProperties = new EntitySet<AgentsProperty>(new Action<AgentsProperty>(this.attach_AgentsProperties), new Action<AgentsProperty>(this.detach_AgentsProperties));
+			this._Properties = new EntitySet<Property>(new Action<Property>(this.attach_Properties), new Action<Property>(this.detach_Properties));
+			this._Transactions = new EntitySet<Transaction>(new Action<Transaction>(this.attach_Transactions), new Action<Transaction>(this.detach_Transactions));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this.OnUserIDChanging(value);
+					this.SendPropertyChanging();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this.OnUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._Username = value;
+					this.SendPropertyChanged("Username");
+					this.OnUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
+		public string Firstname
+		{
+			get
+			{
+				return this._Firstname;
+			}
+			set
+			{
+				if ((this._Firstname != value))
+				{
+					this.OnFirstnameChanging(value);
+					this.SendPropertyChanging();
+					this._Firstname = value;
+					this.SendPropertyChanged("Firstname");
+					this.OnFirstnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
+		public string Lastname
+		{
+			get
+			{
+				return this._Lastname;
+			}
+			set
+			{
+				if ((this._Lastname != value))
+				{
+					this.OnLastnameChanging(value);
+					this.SendPropertyChanging();
+					this._Lastname = value;
+					this.SendPropertyChanged("Lastname");
+					this.OnLastnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="VarChar(50)")]
+		public string UserType
+		{
+			get
+			{
+				return this._UserType;
+			}
+			set
+			{
+				if ((this._UserType != value))
+				{
+					this.OnUserTypeChanging(value);
+					this.SendPropertyChanging();
+					this._UserType = value;
+					this.SendPropertyChanged("UserType");
+					this.OnUserTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageURL", DbType="VarChar(500)")]
+		public string imageURL
+		{
+			get
+			{
+				return this._imageURL;
+			}
+			set
+			{
+				if ((this._imageURL != value))
+				{
+					this.OnimageURLChanging(value);
+					this.SendPropertyChanging();
+					this._imageURL = value;
+					this.SendPropertyChanged("imageURL");
+					this.OnimageURLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_AgentsProperty", Storage="_AgentsProperties", ThisKey="UserID", OtherKey="AgentID")]
+		public EntitySet<AgentsProperty> AgentsProperties
+		{
+			get
+			{
+				return this._AgentsProperties;
+			}
+			set
+			{
+				this._AgentsProperties.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Property", Storage="_Properties", ThisKey="UserID", OtherKey="OwnerID")]
+		public EntitySet<Property> Properties
+		{
+			get
+			{
+				return this._Properties;
+			}
+			set
+			{
+				this._Properties.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Transaction", Storage="_Transactions", ThisKey="UserID", OtherKey="AgentID")]
+		public EntitySet<Transaction> Transactions
+		{
+			get
+			{
+				return this._Transactions;
+			}
+			set
+			{
+				this._Transactions.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AgentsProperties(AgentsProperty entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_AgentsProperties(AgentsProperty entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Properties(Property entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Properties(Property entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_Transactions(Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Transactions(Transaction entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
 		}
 	}
 	
@@ -2275,140 +2382,6 @@ namespace TerraHomes
 		}
 	}
 	
-	public partial class sp_GetUsersResult
-	{
-		
-		private int _UserID;
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _Firstname;
-		
-		private string _Lastname;
-		
-		private string _Email;
-		
-		private string _UserType;
-		
-		public sp_GetUsersResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
-		public string Firstname
-		{
-			get
-			{
-				return this._Firstname;
-			}
-			set
-			{
-				if ((this._Firstname != value))
-				{
-					this._Firstname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
-		public string Lastname
-		{
-			get
-			{
-				return this._Lastname;
-			}
-			set
-			{
-				if ((this._Lastname != value))
-				{
-					this._Lastname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this._Email = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="VarChar(50)")]
-		public string UserType
-		{
-			get
-			{
-				return this._UserType;
-			}
-			set
-			{
-				if ((this._UserType != value))
-				{
-					this._UserType = value;
-				}
-			}
-		}
-	}
-	
 	public partial class sp_GetPropertyImagesResult
 	{
 		
@@ -2600,6 +2573,310 @@ namespace TerraHomes
 				if ((this._Status != value))
 				{
 					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetUsersResult1
+	{
+		
+		private int _UserID;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Firstname;
+		
+		private string _Lastname;
+		
+		private string _Email;
+		
+		private string _UserType;
+		
+		private string _imageURL;
+		
+		public sp_GetUsersResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
+		public string Firstname
+		{
+			get
+			{
+				return this._Firstname;
+			}
+			set
+			{
+				if ((this._Firstname != value))
+				{
+					this._Firstname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
+		public string Lastname
+		{
+			get
+			{
+				return this._Lastname;
+			}
+			set
+			{
+				if ((this._Lastname != value))
+				{
+					this._Lastname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="VarChar(50)")]
+		public string UserType
+		{
+			get
+			{
+				return this._UserType;
+			}
+			set
+			{
+				if ((this._UserType != value))
+				{
+					this._UserType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageURL", DbType="VarChar(500)")]
+		public string imageURL
+		{
+			get
+			{
+				return this._imageURL;
+			}
+			set
+			{
+				if ((this._imageURL != value))
+				{
+					this._imageURL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAllUsersResult
+	{
+		
+		private int _UserID;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Firstname;
+		
+		private string _Lastname;
+		
+		private string _Email;
+		
+		private string _UserType;
+		
+		private string _imageURL;
+		
+		public sp_GetAllUsersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Firstname", DbType="VarChar(50)")]
+		public string Firstname
+		{
+			get
+			{
+				return this._Firstname;
+			}
+			set
+			{
+				if ((this._Firstname != value))
+				{
+					this._Firstname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lastname", DbType="VarChar(50)")]
+		public string Lastname
+		{
+			get
+			{
+				return this._Lastname;
+			}
+			set
+			{
+				if ((this._Lastname != value))
+				{
+					this._Lastname = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserType", DbType="VarChar(50)")]
+		public string UserType
+		{
+			get
+			{
+				return this._UserType;
+			}
+			set
+			{
+				if ((this._UserType != value))
+				{
+					this._UserType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imageURL", DbType="VarChar(500)")]
+		public string imageURL
+		{
+			get
+			{
+				return this._imageURL;
+			}
+			set
+			{
+				if ((this._imageURL != value))
+				{
+					this._imageURL = value;
 				}
 			}
 		}

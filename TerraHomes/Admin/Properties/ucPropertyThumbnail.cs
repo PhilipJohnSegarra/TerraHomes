@@ -37,7 +37,7 @@ namespace TerraHomes.Admin.Properties
             this.size = size;
 
             //Get the agent that is assigned to the property
-            var Users = from user in UsersDB.GetUsers()
+            var Users = from user in UsersDB.GetAllUsers()
                         where user.UserID == ownerID
                         select user;
 

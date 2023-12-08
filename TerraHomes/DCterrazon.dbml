@@ -1,24 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TerraZonDB" Class="DCterrazonDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=TerraZonDB;Integrated Security=True" SettingsObjectName="TerraHomes.Properties.Settings" SettingsPropertyName="TerraZonDBConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="User_Property" Member="Properties" ThisKey="UserID" OtherKey="OwnerID" Type="Property" />
-      <Association Name="User_Transaction" Member="Transactions" ThisKey="UserID" OtherKey="AgentID" Type="Transaction" />
-    </Type>
-  </Table>
   <Table Name="dbo.AgentsProperties" Member="AgentsProperties">
     <Type Name="AgentsProperty">
       <Column Name="AgentPropertyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AgentID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="PropertyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Property_AgentsProperty" Member="Property" ThisKey="PropertyID" OtherKey="PropertyID" Type="Property" IsForeignKey="true" />
+      <Association Name="User_AgentsProperty" Member="User" ThisKey="AgentID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PropertyImages" Member="PropertyImages">
@@ -55,9 +43,9 @@
       <Column Name="PropertyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="User_Transaction" Member="User" ThisKey="AgentID" OtherKey="UserID" Type="User" IsForeignKey="true" />
       <Association Name="Property_Transaction" Member="Property" ThisKey="PropertyID" OtherKey="PropertyID" Type="Property" IsForeignKey="true" />
       <Association Name="Customer_Transaction" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" />
+      <Association Name="User_Transaction" Member="User" ThisKey="AgentID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Customers" Member="Customers">
@@ -69,6 +57,21 @@
       <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Association Name="Customer_Transaction" Member="Transactions" ThisKey="CustomerID" OtherKey="CustomerID" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="imageURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="User_AgentsProperty" Member="AgentsProperties" ThisKey="UserID" OtherKey="AgentID" Type="AgentsProperty" />
+      <Association Name="User_Property" Member="Properties" ThisKey="UserID" OtherKey="OwnerID" Type="Property" />
+      <Association Name="User_Transaction" Member="Transactions" ThisKey="UserID" OtherKey="AgentID" Type="Transaction" />
     </Type>
   </Table>
   <Function Name="dbo.sp_GetData" Method="sp_GetData">
@@ -142,17 +145,6 @@
       <Column Name="OwnerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_GetUsers" Method="sp_GetUsers">
-    <ElementType Name="sp_GetUsersResult">
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_GetPropertyImages" Method="sp_GetPropertyImages">
     <ElementType Name="sp_GetPropertyImagesResult">
       <Column Name="ImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -209,16 +201,6 @@
     <Parameter Name="propID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateUsers" Method="sp_UpdateUsers">
-    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="firstname" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="lastname" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.sp_UpdateCustomers" Method="sp_UpdateCustomers">
     <Parameter Name="customerID" Type="System.Int32" DbType="Int" />
     <Parameter Name="fname" Type="System.String" DbType="VarChar(50)" />
@@ -269,6 +251,45 @@
     <Parameter Name="price" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Parameter Name="size" Type="System.String" DbType="VarChar(150)" />
     <Parameter Name="ownerID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUsers" Method="sp_UpdateUsers">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="firstname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lastname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="usertype" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="imageURL" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetUsers" Method="sp_GetUsers">
+    <ElementType Name="sp_GetUsersResult1">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="imageURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAllUsers" Method="sp_GetAllUsers">
+    <ElementType Name="sp_GetAllUsersResult">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="imageURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_DeleteAllPropertyImages" Method="sp_DeleteAllPropertyImages">
+    <Parameter Name="propID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -14,13 +14,13 @@ namespace TerraHomes.Admin.Properties
     public partial class ucProperties : UserControl
     {
         List<sp_GetPropertiesResult> allProperties = null;
-        List<sp_GetUsersResult> allUsers = null;
+        List<sp_GetAllUsersResult> allUsers = null;
         List<sp_GetPropertyImagesResult> allPropertiesImages = null;
         public ucProperties()
         {
             InitializeComponent();
             this.allProperties = PropertiesDB.GetProperties();
-            this.allUsers = UsersDB.GetUsers();
+            this.allUsers = UsersDB.GetAllUsers();
             this.allPropertiesImages = PropertyImagesDB.GetPropertyImages();
 
             this.DoubleBuffered = true;
@@ -32,6 +32,8 @@ namespace TerraHomes.Admin.Properties
             btnListView.Checked = true;
             ucAddNewProperty1.Visible = false;
             ucViewProperty1.Visible = false;
+
+            cbType.SelectedIndex = 0; cbStatus.SelectedIndex = 0;
 
             AddFlowPanelData();
             ShowProperties();
@@ -55,7 +57,7 @@ namespace TerraHomes.Admin.Properties
                                        Agent = (data != null) ? $"{data.Firstname} {data.Lastname}" : "No Agent"
                                    };
 
-            if(String.IsNullOrEmpty(cbType.Text) && String.IsNullOrEmpty(cbStatus.Text))
+            if(cbType.Text == "All" && cbStatus.Text == "All")
             {
                 dgvProperties.DataSource = AllPropAndAgents.ToList();
                 if (dgvProperties.Columns.Contains("PropertyName"))
@@ -63,7 +65,7 @@ namespace TerraHomes.Admin.Properties
                     dgvProperties.Columns["PropertyName"].HeaderText = "Property Name";
                 }
             }
-            else if(!String.IsNullOrEmpty(cbType.Text) && String.IsNullOrEmpty(cbStatus.Text))
+            else if(!String.IsNullOrEmpty(cbType.Text) && cbStatus.Text == "All")
             {
                 var filteredProps = from prop in AllPropAndAgents
                                     where prop.Type == cbType.Text
@@ -71,7 +73,7 @@ namespace TerraHomes.Admin.Properties
 
                 dgvProperties.DataSource = filteredProps.ToList();
             }
-            else if (String.IsNullOrEmpty(cbType.Text) && !String.IsNullOrEmpty(cbStatus.Text))
+            else if (cbType.Text == "All" && !String.IsNullOrEmpty(cbStatus.Text))
             {
                 var filteredProps = from prop in AllPropAndAgents
                                     where prop.Status == cbStatus.Text
@@ -114,7 +116,7 @@ namespace TerraHomes.Admin.Properties
         {
             flpProperties.Controls.Clear();
 
-            if (String.IsNullOrEmpty(cbType.Text) && String.IsNullOrEmpty(cbStatus.Text))
+            if (cbType.Text == "All" && cbStatus.Text == "All")
             {
                 foreach (var prop in allProperties)
                 {
@@ -139,7 +141,7 @@ namespace TerraHomes.Admin.Properties
                     flpProperties.Controls.Add(propertyThumbnail);
                 }
             }
-            else if (!String.IsNullOrEmpty(cbType.Text) && String.IsNullOrEmpty(cbStatus.Text))
+            else if (!String.IsNullOrEmpty(cbType.Text) && cbStatus.Text == "All")
             {
                 var filteredProps = from prop in allProperties
                                     where prop.Type == cbType.Text
@@ -167,7 +169,7 @@ namespace TerraHomes.Admin.Properties
                     flpProperties.Controls.Add(propertyThumbnail);
                 }
             }
-            else if (String.IsNullOrEmpty(cbType.Text) && !String.IsNullOrEmpty(cbStatus.Text))
+            else if (cbType.Text == "All" && !String.IsNullOrEmpty(cbStatus.Text))
             {
                 var filteredProps = from prop in allProperties
                                     where prop.Status == cbStatus.Text
@@ -261,11 +263,13 @@ namespace TerraHomes.Admin.Properties
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            //dgvProperties.DataSource = null;
-            //flpProperties.Controls.Clear();
 
-            //AddFlowPanelData();
-            //ShowProperties();
+            this.allProperties = PropertiesDB.GetProperties();
+            this.allUsers = UsersDB.GetAllUsers();
+            this.allPropertiesImages = PropertyImagesDB.GetPropertyImages();
+
+            AddFlowPanelData();
+            ShowProperties();
         }
 
         private void cbType_SelectedIndexPropertyChanged(object sender, EventArgs e)

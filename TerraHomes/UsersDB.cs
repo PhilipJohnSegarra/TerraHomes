@@ -32,11 +32,11 @@ namespace TerraHomes
             }
         }
         //Returns the full users table
-        public static List<sp_GetUsersResult> GetUsers()
+        public static List<sp_GetAllUsersResult> GetAllUsers()
         {
-            using(_dbContext = new DCterrazonDataContext())
+            using(_dbContext= new DCterrazonDataContext())
             {
-                return _dbContext.sp_GetUsers().ToList<sp_GetUsersResult>();
+                return _dbContext.sp_GetAllUsers().ToList<sp_GetAllUsersResult>();
             }
         }
         //Inserts a new user to the users table
@@ -48,11 +48,11 @@ namespace TerraHomes
             }
         }
         //Updates a specified user on the users table
-        public static void UpdateUser(int id, string username, string password, string firstname, string lastname, string email, string usertype)
+        public static void UpdateUser(int id, string username, string password, string firstname, string lastname, string email, string usertype, string imageURL)
         {
             using (_dbContext = new DCterrazonDataContext())
             {
-                _dbContext.sp_UpdateUsers(id, username, password, firstname, lastname, email, usertype);
+                _dbContext.sp_UpdateUsers(id, username, password, firstname, lastname, email, usertype,imageURL);
             }
         }
         //Deletes a specified user from the users table

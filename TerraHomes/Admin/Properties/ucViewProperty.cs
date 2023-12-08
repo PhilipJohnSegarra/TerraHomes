@@ -16,11 +16,11 @@ namespace TerraHomes.Admin.Properties
         public int propID { get; set; }
         public List<string> images { get; set; }
         int count = 0;
-        List<sp_GetUsersResult> users = null;
+        List<sp_GetAllUsersResult> users = null;
         public ucViewProperty()
         {
             InitializeComponent();
-            users = UsersDB.GetUsers();
+            users = UsersDB.GetAllUsers();
         }
         public void EnableUpdating()
         {
@@ -43,7 +43,11 @@ namespace TerraHomes.Admin.Properties
         {
             foreach(var user in users)
             {
-                cbAssignees.Items.Add(user.UserID);
+                if(user.UserType == "Agent")
+                {
+                    cbAssignees.Items.Add(user.UserID);
+                }
+                
             }
         }
 
@@ -118,7 +122,56 @@ namespace TerraHomes.Admin.Properties
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            if (txtPropertyId.Text != "")
+            {
+                var editProp = from prop in PropertiesDB.GetProperties()
+                               where prop.PropertyID == Convert.ToInt32(txtPropertyId.Text)
+                               select prop;
 
+                if (editProp.Any())
+                {
+                    this.propID = editProp.First().PropertyID;
+                    var editPropImages = from propimg in PropertyImagesDB.GetPropertyImages()
+                                         where propimg.PropertyID == Convert.ToInt32(txtPropertyId.Text)
+                                         select propimg.ImageURL;
+                    this.images = editPropImages.ToList();
+                    pbPropertyImages.ImageLocation = this.images.First();
+
+
+                    txtPropertyName.Text = editProp.First().PropertyName;
+                    txtPropertyAddress.Text = editProp.First().Address;
+                    txtPropertyDesc.Text = editProp.First().Description;
+                    txtPropertySize.Text = editProp.First().Size;
+                    txtPropertyPrice.Text = editProp.First().Price.ToString();
+                    cbAssignees.Text = editProp.First().OwnerID.ToString();
+                    cbPropertyStatus.Text = editProp.First().Status;
+                    cbType.Text = editProp.First().Type;
+                }
+                else if (!editProp.Any())
+                {
+                    txtPropertyName.Clear();
+                    txtPropertyAddress.Clear();
+                    txtPropertyDesc.Clear();
+                    txtPropertySize.Clear();
+                    txtPropertyPrice.Clear();
+                    cbAssignees.Text = "";
+                    cbPropertyStatus.Text = "";
+                    cbType.Text = "";
+                    pbPropertyImages.ImageLocation = null;
+                }
+            }
+            else
+            {
+                txtPropertyName.Clear();
+                txtPropertyAddress.Clear();
+                txtPropertyDesc.Clear();
+                txtPropertySize.Clear();
+                txtPropertyPrice.Clear();
+                cbAssignees.Text = "";
+                cbPropertyStatus.Text = "";
+                cbType.Text = "";
+                pbPropertyImages.ImageLocation = null;
+            }
         }
 
         private void ucViewProperty_VisibleChanged(object sender, EventArgs e)
@@ -214,12 +267,32 @@ namespace TerraHomes.Admin.Properties
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("This property will be deleted permanently, \n continue?") == DialogResult.OK)
+            try
             {
-                PropertyImagesDB.DeletePropertyImages(this.propID);
+                if (MessageBox.Show("This property will be deleted permanently, \n continue?") == DialogResult.OK)
+                {
+                    PropertyImagesDB.DeleteAllPropImages(this.propID);
+                    PropertiesDB.DeleteProperty(this.propID);
 
-                
-                MessageBox.Show("Property has been deleted from the database");
+                    this.Visible = false;
+                    txtPropertyName.Clear();
+                    txtPropertyAddress.Clear();
+                    txtPropertyDesc.Clear();
+                    txtPropertySize.Clear();
+                    txtPropertyPrice.Clear();
+                    cbAssignees.Enabled = false;
+                    cbPropertyStatus.Enabled = false;
+                    cbType.Enabled = false;
+                    pbPropertyImages.ImageLocation = null;
+                    txtPropertyId.Text = "";
+                    this.SendToBack();
+
+                    MessageBox.Show("Property has been deleted from the database");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

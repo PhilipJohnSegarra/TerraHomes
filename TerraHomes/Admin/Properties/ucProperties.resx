@@ -139,13 +139,10 @@
         jcL+Zz1PJIp+APcAasoEFBSwAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="guna2HtmlToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAXdJREFUSEvVVtFtgzAQZYSMwE8ljKnETyWwicR3RcCdoBmBDdoNmhGyQUegG6Qb
+        EAAACxABrSO9dQAAAXdJREFUSEvVVtFtgzAQZYSMwE8ljKnETyWwicR3RcCdoBmBDdoNmhGyQUegG6Qb
         pBswQnvvOJCl5AfVrZQnPcl3h46zz+8g+ne4Ot7sTLoHXZHE4g4HVydxZ/VI/J75ZPWzhMOAkp46o8+u
         ympn0pzsM3F0db5BHDtbS07sA5W3Jn0VM8KRwYcXwqb1F+w15EQ+yImjGsSMWquOeHDZSal7FLGGnMiH
         s7rnCkyKYzphTQ8eJBwOdDR7SvwBUm8uK7kZNEVSt0YdwKZUTtzh0GyV45543JWql3AYdJYaDp0UeYwb
@@ -166,6 +163,9 @@
         QmCC
 </value>
   </data>
+  <metadata name="guna2HtmlToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="resource.Image1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -217,7 +217,7 @@
         W30aj49+CGjzO2y6Ili6d4JN9V+v+zKTLHsBiEvFp6JKjScAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="resource.Image3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAPFJREFUSEvtVcERgjAQpBSemPjgiQFnUgBgSrAES6AEO9AS7AA7oATtwBLwNp6f
@@ -253,9 +253,6 @@
         T4pDxSkAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="guna2HtmlToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>175, 17</value>
   </metadata>
