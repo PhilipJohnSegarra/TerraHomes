@@ -269,6 +269,7 @@
             this.txtPropertyPrice.Size = new System.Drawing.Size(394, 45);
             this.txtPropertyPrice.TabIndex = 12;
             this.txtPropertyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPropertyPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPropertyPrice_KeyPress);
             // 
             // label7
             // 

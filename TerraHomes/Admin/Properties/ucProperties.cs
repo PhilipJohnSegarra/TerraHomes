@@ -115,7 +115,6 @@ namespace TerraHomes.Admin.Properties
         private void AddFlowPanelData()
         {
             flpProperties.Controls.Clear();
-
             if (cbType.Text == "All" && cbStatus.Text == "All")
             {
                 foreach (var prop in allProperties)
@@ -137,7 +136,6 @@ namespace TerraHomes.Admin.Properties
 
                     propertyThumbnail.btnViewClick += PropertyThumbnail_btnViewClick;
 
-                    flpProperties.Controls.Clear();
                     flpProperties.Controls.Add(propertyThumbnail);
                 }
             }
@@ -165,7 +163,6 @@ namespace TerraHomes.Admin.Properties
 
                     propertyThumbnail.btnViewClick += PropertyThumbnail_btnViewClick;
 
-                    flpProperties.Controls.Clear();
                     flpProperties.Controls.Add(propertyThumbnail);
                 }
             }
@@ -193,7 +190,6 @@ namespace TerraHomes.Admin.Properties
 
                     propertyThumbnail.btnViewClick += PropertyThumbnail_btnViewClick;
 
-                    flpProperties.Controls.Clear();
                     flpProperties.Controls.Add(propertyThumbnail);
                 }
             }
@@ -221,7 +217,6 @@ namespace TerraHomes.Admin.Properties
 
                     propertyThumbnail.btnViewClick += PropertyThumbnail_btnViewClick;
 
-                    flpProperties.Controls.Clear();
                     flpProperties.Controls.Add(propertyThumbnail);
                 }
             }

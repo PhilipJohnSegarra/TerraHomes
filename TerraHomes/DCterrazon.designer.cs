@@ -323,6 +323,27 @@ namespace TerraHomes
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propID);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PropertiesRented")]
+		public ISingleResult<sp_PropertiesRentedResult> sp_PropertiesRented()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_PropertiesRentedResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PropertiesSold")]
+		public ISingleResult<sp_PropertiesSoldResult> sp_PropertiesSold()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_PropertiesSoldResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CountAvailable")]
+		public ISingleResult<sp_CountAvailableResult> sp_CountAvailable()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_CountAvailableResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AgentsProperties")]
@@ -2877,6 +2898,120 @@ namespace TerraHomes
 				if ((this._imageURL != value))
 				{
 					this._imageURL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_PropertiesRentedResult
+	{
+		
+		private System.Nullable<int> _SoldCount;
+		
+		private System.Nullable<decimal> _AmountSold;
+		
+		public sp_PropertiesRentedResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoldCount", DbType="Int")]
+		public System.Nullable<int> SoldCount
+		{
+			get
+			{
+				return this._SoldCount;
+			}
+			set
+			{
+				if ((this._SoldCount != value))
+				{
+					this._SoldCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountSold", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> AmountSold
+		{
+			get
+			{
+				return this._AmountSold;
+			}
+			set
+			{
+				if ((this._AmountSold != value))
+				{
+					this._AmountSold = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_PropertiesSoldResult
+	{
+		
+		private System.Nullable<int> _SoldCount;
+		
+		private System.Nullable<decimal> _AmountSold;
+		
+		public sp_PropertiesSoldResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoldCount", DbType="Int")]
+		public System.Nullable<int> SoldCount
+		{
+			get
+			{
+				return this._SoldCount;
+			}
+			set
+			{
+				if ((this._SoldCount != value))
+				{
+					this._SoldCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountSold", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> AmountSold
+		{
+			get
+			{
+				return this._AmountSold;
+			}
+			set
+			{
+				if ((this._AmountSold != value))
+				{
+					this._AmountSold = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CountAvailableResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public sp_CountAvailableResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}

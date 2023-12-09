@@ -39,5 +39,26 @@ namespace TerraHomes
                 _dbContext.sp_DeleteProperties(propID);
             }
         }
+        public static List<sp_PropertiesSoldResult> GetPropertiesSold()
+        {
+            using (_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_PropertiesSold().ToList();
+            }
+        }
+        public static List<sp_PropertiesRentedResult> GetPropertiesRented()
+        {
+            using(_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_PropertiesRented().ToList();
+            }
+        }
+        public static List<sp_CountAvailableResult> CountAvailable()
+        {
+            using(_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_CountAvailable().ToList();
+            }
+        }
     }
 }

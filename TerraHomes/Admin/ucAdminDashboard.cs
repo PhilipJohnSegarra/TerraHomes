@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -16,74 +19,65 @@ namespace TerraHomes.Admin
 {
     public partial class ucAdminDashboard : UserControl
     {
+        List<sp_GetPropertiesResult> _properties;
+        List<sp_GetTransactionsResult> _transactions;
         public ucAdminDashboard()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
 
+            _properties = PropertiesDB.GetProperties();
+            _transactions = TransactionsDB.GetTransactions();
+
             AutoScroll = true;
 
             //AddCardsPanel();
 
-            Random r = new Random();
-            Random p = new Random();
-            RevenueLineGraph(1, 1000, "Revenue", r);
-            ProfitLineGraph(300, 900, "Profit", p);
-            //DonutGraph();
+            RevenueLineGraph();
+            PropertiesSoldData();
+            ShowTransactions();
+        }
+        private void PropertiesSoldData()
+        {
+            List<sp_PropertiesSoldResult> propSold = PropertiesDB.GetPropertiesSold();
+            lblPropSold.Text = propSold.First().SoldCount.ToString();
+            lblAmountPropSold.Text= propSold.First().AmountSold.ToString();
+
+            List<sp_PropertiesRentedResult> propRented = PropertiesDB.GetPropertiesRented();
+            lblPropRented.Text = propRented.First().SoldCount.ToString();
+            lblAmountPropRented.Text = propRented.First().AmountSold.ToString();
+
+            List<sp_CountAvailableResult> availableProps = PropertiesDB.CountAvailable();
+            lblAvailable.Text = availableProps.First().Column1.ToString();
+
+            //var propAvailable = from prop in _properties
+            //                    where prop.Status == "Available"
+            //                    select _properties.Count();
+
+            //lblAvailable.Text = propAvailable.FirstOrDefault().ToString();
+
+            var propPending = from prop in _properties
+                              where prop.Status == "Pending"
+                              select _properties.Count();
+            lblPending.Text = propPending.FirstOrDefault().ToString();
+        }
+        private void ShowTransactions()
+        {
+            dgvTransactions.DataSource = _transactions.ToList();
         }
 
-        private void AddCardsPanel()
+        private void RevenueLineGraph()
         {
-            Guna2Panel cardspanel = new Guna2Panel();
-            cardspanel.Width = 1055;
-            cardspanel.Height = 150;
-            cardspanel.Location = new Point(0, 85);
-            cardspanel.BackColor = Color.Transparent;
-            cardspanel.FillColor = Color.Transparent;
-            cardspanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            cardspanel.Margin = new System.Windows.Forms.Padding(3);
-            cardspanel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            revenueChart.Datasets.Clear();
+            var LineRevenue = from transacs in _transactions
+                              group transacs by transacs.Date into transactions
+                              orderby transactions.Min(t => t.Date) ascending
+                              select transactions;
 
-            this.Controls.Add(cardspanel);
-
-            int firstLocationX = 93;
-            int firstLocationY = 0;
-
-            CardsControl Card1 = new CardsControl("Properties Sold", 85, "$" + 108678908.00, firstLocationX, firstLocationY);
-            firstLocationX += 222;
-            CardsControl Card2 = new CardsControl("Properties Rented", 35, "$" + 108678, firstLocationX, firstLocationY);
-            firstLocationX += 222;
-            CardsControl Card3 = new CardsControl("Available", 97, "--", firstLocationX, firstLocationY);
-            firstLocationX += 222;
-            CardsControl Card4 = new CardsControl("Pending", 13, "--", firstLocationX, firstLocationY);
-
-            cardspanel.Controls.Add(Card1.InitializeComponent());
-
-            cardspanel.Controls.Add(Card2.InitializeComponent());
-
-            cardspanel.Controls.Add(Card3.InitializeComponent());
-  
-            cardspanel.Controls.Add(Card4.InitializeComponent());
-        }
-
-        private void RevenueLineGraph(int num1, int num2, string label, Random r)
-        {
-
-            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-            RevenueDataset.Label = label;
-
-            RevenueDataset.DataPoints.Add(months[0], 990);
-            RevenueDataset.DataPoints.Add(months[1], 712);
-            RevenueDataset.DataPoints.Add(months[2], 839);
-            RevenueDataset.DataPoints.Add(months[3], 567);
-            RevenueDataset.DataPoints.Add(months[4], 921);
-            RevenueDataset.DataPoints.Add(months[5], 655);
-            RevenueDataset.DataPoints.Add(months[6], 778);
-            RevenueDataset.DataPoints.Add(months[7], 603);
-            RevenueDataset.DataPoints.Add(months[8], 504);
-            RevenueDataset.DataPoints.Add(months[9], 888);
-            RevenueDataset.DataPoints.Add(months[10], 732);
-            RevenueDataset.DataPoints.Add(months[11], r.Next(num1, num2));
+            foreach (var transacs in LineRevenue)
+            {
+                RevenueDataset.DataPoints.Add(transacs.First().Date.ToString(), (double)transacs.First().Amount);
+            }
 
             //revenueChart.PaletteCustomColors.PointFillColors.AddRange(new System.Drawing.Color[] { color });
             //revenueChart.PaletteCustomColors.PointBorderColors.AddRange(new System.Drawing.Color[] { color });
@@ -147,7 +141,14 @@ namespace TerraHomes.Admin
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            RevenueLineGraph();
+            PropertiesSoldData();
+            ShowTransactions();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
         //private Control CardControl(string title, int Data, object Amount, int locationX, int locationY)
         //{

@@ -193,5 +193,13 @@ namespace TerraHomes.Admin.Properties
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtPropertyPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true; // Ignore the key press event
+            }
+        }
     }
 }

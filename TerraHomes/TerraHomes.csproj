@@ -169,6 +169,9 @@
     </Compile>
     <Compile Include="CustomersDB.cs" />
     <Compile Include="DataSecure.cs" />
+    <Compile Include="DCterrazon.cs">
+      <DependentUpon>DCterrazon.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DCterrazon.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

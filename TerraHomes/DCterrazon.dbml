@@ -292,4 +292,21 @@
     <Parameter Name="propID" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_PropertiesRented" Method="sp_PropertiesRented">
+    <ElementType Name="sp_PropertiesRentedResult">
+      <Column Name="SoldCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AmountSold" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PropertiesSold" Method="sp_PropertiesSold">
+    <ElementType Name="sp_PropertiesSoldResult">
+      <Column Name="SoldCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AmountSold" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_CountAvailable" Method="sp_CountAvailable">
+    <ElementType Name="sp_CountAvailableResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

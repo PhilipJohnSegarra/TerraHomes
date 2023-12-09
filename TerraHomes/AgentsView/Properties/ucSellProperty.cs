@@ -75,11 +75,26 @@ namespace TerraHomes.AgentsView.Properties
         {
             try
             {
-                //CustomersDB.InsertNewCustomer(txtCustFname.Text, txtCustLname.Text, txtCustEmail.Text, txtCustPhone.Text, txtCustAddress.Text);
+                CustomersDB.InsertNewCustomer(txtCustFname.Text, txtCustLname.Text, txtCustEmail.Text, txtCustPhone.Text, txtCustAddress.Text);
                 var latestCustomer = from cust in CustomersDB.GetCustomers()
                                      where cust.CustomerID == CustomersDB.GetCustomers().Max(i => i.CustomerID)
                                      select cust;
                 TransactionsDB.InsertNewTransaction(dtpTransacDateTime.Value, this.CurrentUserId, latestCustomer.First().CustomerID, this.propertyId, Convert.ToDecimal(txtPropertyPrice.Text), "Approved");
+                
+                if(this.Type == "For Rent")
+                {
+                    PropertiesDB.UpdateProperty(this.propertyId, this.propertyName, this.address, this.description, this.Type, "Rented", (decimal)this.price, this.size, this.CurrentUserId);
+                }
+                else if(this.Type == "For Sale")
+                {
+                    PropertiesDB.UpdateProperty(this.propertyId, this.propertyName, this.address, this.description, this.Type, "Sold", (decimal)this.price, this.size, this.CurrentUserId);
+                }
+                else
+                {
+                    PropertiesDB.UpdateProperty(this.propertyId, this.propertyName, this.address, this.description, this.Type, "Sold", (decimal)this.price, this.size, this.CurrentUserId);
+                }
+
+
             }
             catch(Exception ex)
             {
