@@ -65,7 +65,20 @@ namespace TerraHomes.Admin
         }
         private void ShowTransactions()
         {
-            dgvTransactions.DataSource = _transactions.ToList();
+            //dgvTransactions.DataSource = _transactions.ToList();
+            var transactions = from transacs in _transactions
+                               join agent in UsersDB.GetAllUsers() on transacs.AgentID equals agent.UserID
+                               join customer in CustomersDB.GetCustomers() on transacs.CustomerID equals customer.CustomerID
+                               select new
+                               {
+                                   TransactionID = transacs.TransactionID,
+                                   Date = transacs.Date,
+                                   Agent = agent.Firstname + " " + agent.Lastname,
+                                   Customer = customer.Firstname + " " + customer.Lastname,
+                                   PropertyID = transacs.PropertyID,
+                                   Amount = transacs.Amount
+                               };
+            dgvTransactions.DataSource = transactions.ToList();
         }
 
         private void RevenueLineGraph()

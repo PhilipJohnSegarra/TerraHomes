@@ -32,6 +32,7 @@ namespace TerraHomes
             properties = new ucProperties();
             finance = new ucFinance();
             agents = new ucAgents();
+            properties.userID = UserID;
 
             //Initialize its properties
             properties.Dock = DockStyle.Fill; properties.Visible = true;

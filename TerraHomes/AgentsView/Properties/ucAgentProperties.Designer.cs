@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucAgentProperties));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -48,8 +48,8 @@
             this.btnListView = new Guna.UI2.WinForms.Guna2Button();
             this.dgvProperties = new Guna.UI2.WinForms.Guna2DataGridView();
             this.flpProperties = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucViewProperty1 = new TerraHomes.Admin.Properties.ucViewProperty();
             this.ucSellProperty1 = new TerraHomes.AgentsView.Properties.ucSellProperty();
+            this.ucViewProperty1 = new TerraHomes.Admin.Properties.ucViewProperty();
             this.guna2Panel1.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,6 +149,7 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(38, 34);
             this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // guna2CustomGradientPanel1
             // 
@@ -179,6 +180,7 @@
             this.cbStatus.Font = new System.Drawing.Font("Fredoka", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
+            "All",
             "Available",
             "Rented",
             "Sold",
@@ -188,12 +190,14 @@
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(140, 24);
             this.cbStatus.TabIndex = 10;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // cbType
             // 
             this.cbType.Font = new System.Drawing.Font("Fredoka", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {
+            "All",
             "For Rent",
             "For Sale",
             "Others"});
@@ -201,6 +205,7 @@
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(140, 24);
             this.cbType.TabIndex = 9;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // btnSellProperty
             // 
@@ -289,26 +294,26 @@
             // 
             // dgvProperties
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvProperties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Fredoka", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvProperties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Fredoka", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProperties.ColumnHeadersHeight = 50;
             this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Fredoka", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProperties.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Fredoka", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProperties.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProperties.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProperties.Location = new System.Drawing.Point(43, 138);
             this.dgvProperties.Name = "dgvProperties";
@@ -345,20 +350,11 @@
             this.flpProperties.Size = new System.Drawing.Size(963, 546);
             this.flpProperties.TabIndex = 17;
             // 
-            // ucViewProperty1
-            // 
-            this.ucViewProperty1.AutoScroll = true;
-            this.ucViewProperty1.images = null;
-            this.ucViewProperty1.Location = new System.Drawing.Point(3, 73);
-            this.ucViewProperty1.Name = "ucViewProperty1";
-            this.ucViewProperty1.propID = 0;
-            this.ucViewProperty1.Size = new System.Drawing.Size(1011, 630);
-            this.ucViewProperty1.TabIndex = 16;
-            // 
             // ucSellProperty1
             // 
             this.ucSellProperty1.address = null;
             this.ucSellProperty1.AutoScroll = true;
+            this.ucSellProperty1.CurrentUserId = 0;
             this.ucSellProperty1.description = null;
             this.ucSellProperty1.Location = new System.Drawing.Point(29, 73);
             this.ucSellProperty1.Name = "ucSellProperty1";
@@ -369,8 +365,22 @@
             0});
             this.ucSellProperty1.propertyId = 0;
             this.ucSellProperty1.propertyName = null;
+            this.ucSellProperty1.size = null;
             this.ucSellProperty1.Size = new System.Drawing.Size(994, 660);
             this.ucSellProperty1.TabIndex = 18;
+            this.ucSellProperty1.Type = null;
+            // 
+            // ucViewProperty1
+            // 
+            this.ucViewProperty1.AutoScroll = true;
+            this.ucViewProperty1.images = null;
+            this.ucViewProperty1.Location = new System.Drawing.Point(3, 73);
+            this.ucViewProperty1.Name = "ucViewProperty1";
+            this.ucViewProperty1.newimages = ((System.Collections.Generic.List<string>)(resources.GetObject("ucViewProperty1.newimages")));
+            this.ucViewProperty1.propID = 0;
+            this.ucViewProperty1.Size = new System.Drawing.Size(1011, 630);
+            this.ucViewProperty1.TabIndex = 16;
+            this.ucViewProperty1.userID = 0;
             // 
             // ucAgentProperties
             // 
@@ -382,10 +392,10 @@
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ucSellProperty1);
             this.Controls.Add(this.ucViewProperty1);
             this.Controls.Add(this.flpProperties);
             this.Controls.Add(this.dgvProperties);
+            this.Controls.Add(this.ucSellProperty1);
             this.Name = "ucAgentProperties";
             this.Size = new System.Drawing.Size(1055, 766);
             this.Load += new System.EventHandler(this.ucAgentProperties_Load);

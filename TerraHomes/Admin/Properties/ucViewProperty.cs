@@ -13,14 +13,20 @@ namespace TerraHomes.Admin.Properties
 {
     public partial class ucViewProperty : UserControl
     {
+        public int userID {  get; set; }
         public int propID { get; set; }
         public List<string> images { get; set; }
+        public List<string> newimages { get; set; }
         int count = 0;
         List<sp_GetAllUsersResult> users = null;
         public ucViewProperty()
         {
             InitializeComponent();
             users = UsersDB.GetAllUsers();
+            newimages = new List<string>();
+
+            btnAddImage.Enabled = false;
+            btnClearImages.Enabled = false;
         }
         public void EnableUpdating()
         {
@@ -36,19 +42,24 @@ namespace TerraHomes.Admin.Properties
             btnSubmit.Enabled = true;
             btnReset.Enabled = true;
 
+            btnAddImage.Enabled = !false;
+            btnClearImages.Enabled = !false;
+
             MessageBox.Show("You may begin updating the information below!\n\nHowever, changing and adding of images requires you to \ndelete and add the current property.");
         }
 
         private void ucViewProperty_Load(object sender, EventArgs e)
         {
-            foreach(var user in users)
-            {
-                if(user.UserType == "Agent")
-                {
-                    cbAssignees.Items.Add(user.UserID);
-                }
-                
-            }
+            var agents = from agent in UsersDB.GetAllUsers()
+                         where agent.UserType == "Agent"
+                         select new
+                         {
+                             ID = agent.UserID,
+                             FullName = agent.Firstname +" "+agent.Lastname
+                         };
+            cbAssignees.DisplayMember = "Fullname";
+            cbAssignees.ValueMember = "ID";
+            cbAssignees.DataSource = agents.ToList();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -97,7 +108,12 @@ namespace TerraHomes.Admin.Properties
             {
                 if (MessageBox.Show("Confirm property update?") == DialogResult.OK)
                 {
-                    PropertiesDB.UpdateProperty(this.propID, txtPropertyName.Text, txtPropertyAddress.Text, txtPropertyDesc.Text, cbType.Text, cbPropertyStatus.Text, Convert.ToDecimal(txtPropertyPrice.Text), txtPropertySize.Text, (int)cbAssignees.SelectedItem);
+                    PropertiesDB.UpdateProperty(this.propID, txtPropertyName.Text, txtPropertyAddress.Text, txtPropertyDesc.Text, cbType.Text, cbPropertyStatus.Text, Convert.ToDecimal(txtPropertyPrice.Text), txtPropertySize.Text, (int)cbAssignees.SelectedValue);
+
+                    foreach (string paths in this.newimages)
+                    {
+                        PropertyImagesDB.InsertNewPropertyImages(this.propID, paths);
+                    }
 
                     MessageBox.Show("Property has been updated");
 
@@ -276,7 +292,8 @@ namespace TerraHomes.Admin.Properties
             {
                 string title = "Comfirm";
                 string Message = "This property will be deleted permanently, \n continue?";
-                if (MessageBox.Show("This property will be deleted permanently, \n continue?") == DialogResult.OK)
+                DialogResult result = MessageBox.Show(Message, title, MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
                 {
                     PropertyImagesDB.DeleteAllPropImages(this.propID);
                     
@@ -297,7 +314,7 @@ namespace TerraHomes.Admin.Properties
 
                     MessageBox.Show("Property has been deleted from the database");
                 }
-                else if(MessageBox.Show("This property will be deleted permanently, \n continue?") == DialogResult.Cancel)
+                else if(result == DialogResult.Cancel)
                 {
                     return;
                 }
@@ -306,6 +323,61 @@ namespace TerraHomes.Admin.Properties
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select Image";
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
+            openFileDialog.Multiselect = false;
+            
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string sourceImagePath = openFileDialog.FileName;
+                newimages.Add(sourceImagePath);
+
+                // Create a PictureBox to display the selected image before copying
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.Width = 222; // Set a suitable width for the picture box
+                pictureBox.Height = 196; // Set a suitable height for the picture box
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom; // Adjust picture box size mode as needed
+                pictureBox.BackColor = Color.Black;
+
+                // Set the image directly from the source path to the PictureBox
+                pictureBox.Image = Image.FromFile(sourceImagePath);
+
+                // Add the PictureBox to the FlowLayoutPanel to display the image
+                flowLayoutPanel1.Controls.Add(pictureBox);
+            }
+            openFileDialog.Dispose();
+        }
+
+        private void btnClearImages_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in flowLayoutPanel1.Controls)
+            {
+                PictureBox pictureBox = c as PictureBox;
+                if (pictureBox != null)
+                {
+                    // Dispose the image and set it to null to release resources
+                    pictureBox.Image.Dispose();
+                    pictureBox.Image = null;
+                    pictureBox.ImageLocation = null;
+
+                    // Dispose the PictureBox itself
+                    pictureBox.Dispose();
+                };
+            }
+            flowLayoutPanel1.Controls.Clear();
+            newimages.Clear();
+        }
+
+        private void btnAddTransaction_Click(object sender, EventArgs e)
+        {
+            frmTransaction newtransaction = new frmTransaction(this.propID);
+            newtransaction.userID = this.userID;
+            newtransaction.ShowDialog();
         }
     }
 }

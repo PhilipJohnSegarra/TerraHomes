@@ -36,6 +36,9 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClearImages = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddImage = new Guna.UI2.WinForms.Guna2Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtPropertyPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnReset = new Guna.UI2.WinForms.Guna2Button();
@@ -58,9 +61,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnAddImage = new Guna.UI2.WinForms.Guna2Button();
-            this.btnClearImages = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddTransaction = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPropertyImages)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -217,6 +218,51 @@
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 4, 4);
             this.guna2Panel1.Size = new System.Drawing.Size(794, 1143);
             this.guna2Panel1.TabIndex = 26;
+            // 
+            // btnClearImages
+            // 
+            this.btnClearImages.BorderRadius = 6;
+            this.btnClearImages.BorderThickness = 1;
+            this.btnClearImages.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearImages.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearImages.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearImages.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearImages.FillColor = System.Drawing.Color.Transparent;
+            this.btnClearImages.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearImages.ForeColor = System.Drawing.Color.Black;
+            this.btnClearImages.Location = new System.Drawing.Point(599, 836);
+            this.btnClearImages.Name = "btnClearImages";
+            this.btnClearImages.Size = new System.Drawing.Size(139, 34);
+            this.btnClearImages.TabIndex = 37;
+            this.btnClearImages.Text = "Clear Images";
+            this.btnClearImages.Click += new System.EventHandler(this.btnClearImages_Click);
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.BorderRadius = 6;
+            this.btnAddImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddImage.FillColor = System.Drawing.Color.Black;
+            this.btnAddImage.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddImage.ForeColor = System.Drawing.Color.White;
+            this.btnAddImage.Location = new System.Drawing.Point(598, 793);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(140, 34);
+            this.btnAddImage.TabIndex = 36;
+            this.btnAddImage.Text = "Add Image";
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(67, 793);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(519, 265);
+            this.flowLayoutPanel1.TabIndex = 35;
             // 
             // txtPropertyPrice
             // 
@@ -585,54 +631,33 @@
             this.guna2Panel2.Size = new System.Drawing.Size(795, 37);
             this.guna2Panel2.TabIndex = 27;
             // 
-            // flowLayoutPanel1
+            // btnAddTransaction
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(67, 793);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(519, 265);
-            this.flowLayoutPanel1.TabIndex = 35;
-            // 
-            // btnAddImage
-            // 
-            this.btnAddImage.BorderRadius = 6;
-            this.btnAddImage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddImage.FillColor = System.Drawing.Color.Black;
-            this.btnAddImage.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddImage.ForeColor = System.Drawing.Color.White;
-            this.btnAddImage.Location = new System.Drawing.Point(598, 793);
-            this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(140, 34);
-            this.btnAddImage.TabIndex = 36;
-            this.btnAddImage.Text = "Add Image";
-            // 
-            // btnClearImages
-            // 
-            this.btnClearImages.BorderRadius = 6;
-            this.btnClearImages.BorderThickness = 1;
-            this.btnClearImages.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClearImages.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClearImages.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClearImages.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClearImages.FillColor = System.Drawing.Color.Transparent;
-            this.btnClearImages.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearImages.ForeColor = System.Drawing.Color.Black;
-            this.btnClearImages.Location = new System.Drawing.Point(599, 836);
-            this.btnClearImages.Name = "btnClearImages";
-            this.btnClearImages.Size = new System.Drawing.Size(139, 34);
-            this.btnClearImages.TabIndex = 37;
-            this.btnClearImages.Text = "Clear Images";
+            this.btnAddTransaction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTransaction.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddTransaction.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddTransaction.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddTransaction.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddTransaction.FillColor = System.Drawing.Color.Transparent;
+            this.btnAddTransaction.Font = new System.Drawing.Font("Fredoka Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTransaction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btnAddTransaction.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnAddTransaction.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.btnAddTransaction.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnAddTransaction.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTransaction.Image")));
+            this.btnAddTransaction.Location = new System.Drawing.Point(298, 9);
+            this.btnAddTransaction.Name = "btnAddTransaction";
+            this.btnAddTransaction.Size = new System.Drawing.Size(225, 31);
+            this.btnAddTransaction.TabIndex = 28;
+            this.btnAddTransaction.Text = "Add Transaction";
+            this.btnAddTransaction.Click += new System.EventHandler(this.btnAddTransaction_Click);
             // 
             // ucViewProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.btnAddTransaction);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnUpdate);
@@ -642,7 +667,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pbPropertyImages);
             this.Name = "ucViewProperty";
-            this.Size = new System.Drawing.Size(972, 640);
+            this.Size = new System.Drawing.Size(955, 623);
             this.Load += new System.EventHandler(this.ucViewProperty_Load);
             this.VisibleChanged += new System.EventHandler(this.ucViewProperty_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pbPropertyImages)).EndInit();
@@ -685,5 +710,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2Button btnAddImage;
         private Guna.UI2.WinForms.Guna2Button btnClearImages;
+        private Guna.UI2.WinForms.Guna2Button btnAddTransaction;
     }
 }

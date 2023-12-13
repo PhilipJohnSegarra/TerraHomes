@@ -207,6 +207,30 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAU1JREFUaEPtmc2JAkEUhCcUj8vowauzHozA7RAMwQw0MzejDWHtBzUg5TSMTb32
+        h/dBHSya6ipBRe2CIAhel7T7Wvx8Ly9Zf1n/NUJUe1C+uvgoxLUnX27P/GSpR4S49kyVqRHi2vMyRWqJ
+        Ac8mBswgDavTfuhPeKjFe4CVH7NdRtyWN8GWkDbLI+fLR/AFsCWkoV/nzLtPeekIDoctw30EB8OW4jqC
+        Q2HLcRvBgbBdcBnBYbCL8HmVqkdwEOwifF6pqhEcArsIn1dqv+3PuGY+HAK7CJ9Xqaq8wUGwXSi+iGvL
+        GxwGW45LeYMDYUtxK29wKGwZruUNDoYtwb28weGwJeQBB86Xljf4Atgy0nZ1HrPl5Y3b8ibYUmyES3mj
+        xQBXYsCz+YQBd+/TNUJce/Ll7/3zetqt3/sPDsNG5G9Dv1PF5gpRQRAEH0nXXQFVPtZBIY6FFQAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="btnLogOut.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAUdJREFUaEPtmVsKwlAMRLsUl+CSXEI/2tI/3ZnuyCVoAlOQsQUNk+uDHMiHw+Xc
+        iWAF7YqiKL6Xvu93wzCcx3G82twiA1V7vLwVCBdfBrr24J1fLfXOQNeetTKRga49X1MkSi3waWqBF7An
+        3dEHL7VkL+DFF3fKEo/lfRBLsMI9++VL8AWIJZhvb/P0LS9dguWIZZgzdwkWI5Zi3rwlWIpYjrlzlmAh
+        4hTMr1+CZYg34fOqCS/BIsSb8HnlhJZgCeJN+Lxypmk64ZrXYQniTfi8akLlHRYhTsH8qx/icHmHZYjl
+        mFtf3mEhYinmzSnvsBSxDHPmlXdYjFiC+XLLOyxHLMF8B/ZLyzt8AWIZXnhxy8s7j+V9EEvx4inlnRYL
+        pFILfJp/WODpOR0Z6Npjl//2z+vzPP/2HxwOlrhwqXcGqqIoir+k6+799fvSrneW6AAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="pbProfilePic.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -242,5 +266,8 @@
   </data>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="ttpLogOut.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
   </metadata>
 </root>

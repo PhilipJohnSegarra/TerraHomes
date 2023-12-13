@@ -39,7 +39,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pbProfilePic = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ttpLogOut = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -124,7 +126,7 @@
             this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnProfile.FillColor = System.Drawing.Color.Transparent;
-            this.btnProfile.Font = new System.Drawing.Font("Fredoka", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Font = new System.Drawing.Font("Fredoka", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.Black;
             this.btnProfile.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnProfile.HoverState.ForeColor = System.Drawing.Color.Gray;
@@ -133,9 +135,11 @@
             this.btnProfile.Location = new System.Drawing.Point(56, 3);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.PressedColor = System.Drawing.Color.Transparent;
-            this.btnProfile.Size = new System.Drawing.Size(239, 32);
+            this.btnProfile.Size = new System.Drawing.Size(172, 32);
             this.btnProfile.TabIndex = 5;
             this.btnProfile.Text = "Juan de la Cruz";
+            this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnProfile.TextOffset = new System.Drawing.Point(-13, 0);
             // 
             // lbluserType
             // 
@@ -144,18 +148,19 @@
             this.lbluserType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.lbluserType.Location = new System.Drawing.Point(56, 31);
             this.lbluserType.Name = "lbluserType";
-            this.lbluserType.Size = new System.Drawing.Size(239, 15);
+            this.lbluserType.Size = new System.Drawing.Size(172, 15);
             this.lbluserType.TabIndex = 6;
             this.lbluserType.Text = "Admin";
-            this.lbluserType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbluserType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.guna2Panel1);
-            this.panel1.Controls.Add(this.lbluserType);
+            this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnProfile);
+            this.panel1.Controls.Add(this.lbluserType);
             this.panel1.Location = new System.Drawing.Point(954, 35);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 54);
@@ -191,10 +196,34 @@
             this.pbProfilePic.TabStop = false;
             this.pbProfilePic.UseTransparentBackground = true;
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLogOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLogOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLogOut.FillColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLogOut.Location = new System.Drawing.Point(244, 8);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(43, 36);
+            this.btnLogOut.TabIndex = 9;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 48;
             this.guna2Elipse1.TargetControl = this.panel1;
+            // 
+            // ttpLogOut
+            // 
+            this.ttpLogOut.AllowLinksHandling = true;
+            this.ttpLogOut.MaximumSize = new System.Drawing.Size(0, 0);
+            this.ttpLogOut.ToolTipTitle = "Log Out";
             // 
             // ucTopPanel
             // 
@@ -229,5 +258,7 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox pbProfilePic;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip ttpLogOut;
     }
 }

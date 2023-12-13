@@ -14,6 +14,7 @@ namespace TerraHomes
     {
         public int userID {  get; set; }
         List<sp_GetAllUsersResult> users;
+        frmStartUp frmStartUp;
         public ucTopPanel()
         {
             InitializeComponent();
@@ -40,6 +41,13 @@ namespace TerraHomes
             btnProfile.Text = currentUser.First().Firstname + " " + currentUser.First().Lastname;
             lbluserType.Text = currentUser.First().UserType;
             pbProfilePic.ImageLocation = currentUser.First().imageURL;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+            frmStartUp = new frmStartUp();
+            frmStartUp.ShowDialog();
         }
     }
 }

@@ -118,17 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAShJREFUSEvtlN1twjAUhTMCI+QFKYmplBckYoPk5ypx3AlgBDZoR2AD2AA2oBuU
-        DWADRmjvMRepVZWATcRTPslSzo3iY9+fRD2dY3U8wGLZHdjUyHRVK3Gm9e2WzI5GZu9W548bWpnltXIb
-        ruwkiTns4kaJDcx+x72xOolhQBsuOPQPOx19OKPQGxmV0knFmmUjlL59VaRLln7wLXKWjZSzFwsjln6g
-        wPzYCmqClLH0Ayb35PrSHOKLpR/04amcJpplIxU1BnXfjqUfVlLn3JHrWx3YClKFNGDoOPQHDCm9Xwff
-        4goZ0ayIIwqLtJSTRL+Oh3lViCVuUMvRlt6f35SY8yfhIB104k+a8gNtejJFuqFBdPXiwndj1EZvFMyz
-        jcL+Zz1PJIp+APcAasoEFBSwAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -145,7 +134,7 @@
   <data name="guna2GradientPanel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -370,7 +359,7 @@
   <data name="guna2GradientPanel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -595,7 +584,7 @@
   <data name="guna2GradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -820,7 +809,7 @@
   <data name="guna2GradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -1042,10 +1031,10 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <metadata name="OccupancyDoughnut.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>278, 17</value>
+  </metadata>
   <metadata name="RevenueDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
-  </metadata>
-  <metadata name="gunaDoughnutDataset1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>278, 17</value>
   </metadata>
 </root>

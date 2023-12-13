@@ -16,6 +16,7 @@ namespace TerraHomes.Admin.Properties
         List<sp_GetPropertiesResult> allProperties = null;
         List<sp_GetAllUsersResult> allUsers = null;
         List<sp_GetPropertyImagesResult> allPropertiesImages = null;
+        public int userID { get; set; }
         public ucProperties()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace TerraHomes.Admin.Properties
             btnListView.Checked = true;
             ucAddNewProperty1.Visible = false;
             ucViewProperty1.Visible = false;
+            ucViewProperty1.userID = this.userID;
 
             cbType.SelectedIndex = 0; cbStatus.SelectedIndex = 0;
 

@@ -13,6 +13,7 @@ namespace TerraHomes.Admin
 {
     public partial class ucAdminSideBar : UserControl
     {
+        frmStartUp frmStartUp;
         public ucAdminSideBar()
         {
             InitializeComponent();
@@ -42,6 +43,13 @@ namespace TerraHomes.Admin
         private void gbtnAgents_Click(object sender, EventArgs e)
         {
             AgentsButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.ParentForm.Close();
+            frmStartUp = new frmStartUp();
+            frmStartUp.ShowDialog();
         }
     }
 }

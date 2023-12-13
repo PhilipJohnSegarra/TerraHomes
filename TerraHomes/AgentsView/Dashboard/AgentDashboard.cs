@@ -29,6 +29,9 @@ namespace TerraHomes.AgentsView.Dashboard
             PropertiesSoldData();
             RevenueLineGraph();
             ShowTransactions();
+            DonutGraph();
+            lblYear.Text = DateTime.Now.Year.ToString();
+
         }
 
         private void PropertiesSoldData()
@@ -51,26 +54,64 @@ namespace TerraHomes.AgentsView.Dashboard
         {
             dgvTransactions.DataSource = TransactionsDB.GetAgentTransactions(this.userID).ToList();
         }
-        private void RevenueLineGraph()
+        private void DonutGraph()
         {
-            revenueChart.Datasets.Clear();
-            var LineRevenue = from transacs in _transactions
-                              group transacs by transacs.Date into transactions
-                              orderby transactions.Min(t => t.Date) ascending
-                              select transactions;
-
-            foreach (var transacs in LineRevenue)
+            var propSales = from transacs in _transactions
+                            where Convert.ToDateTime(transacs.Date).Year == DateTime.Now.Year && transacs.AgentID == this.userID
+                            join props in _properties on transacs.PropertyID equals props.PropertyID
+                            group transacs by props.Type into props
+                            select new
+                            {
+                                propType = props.Key,
+                                Count = props.Count()
+                            };
+            OccupancyDoughnut.DataPoints.Clear();
+            foreach (var prop in propSales.ToList())
             {
-                RevenueDataset.DataPoints.Add(transacs.First().Date.ToString(), (double)transacs.First().Amount);
+                if (prop.propType == "For Sale")
+                {
+                    OccupancyDoughnut.DataPoints.Add("Property Sales", prop.Count);
+                }
+                else if (prop.propType == "For Rent")
+                {
+                    OccupancyDoughnut.DataPoints.Add("Property Rented", prop.Count);
+                }
+                else if (prop.propType == "Others")
+                {
+                    OccupancyDoughnut.DataPoints.Add("Others", prop.Count);
+                }
             }
 
-            //revenueChart.PaletteCustomColors.PointFillColors.AddRange(new System.Drawing.Color[] { color });
-            //revenueChart.PaletteCustomColors.PointBorderColors.AddRange(new System.Drawing.Color[] { color });
-            //RevenueDataset.FillColor = Color.FromArgb(79, 59, 43);
+            occupancyPie.Update();
+        }
+        private void RevenueLineGraph()
+        {
+            RevenueDataset.DataPoints.Clear();
+            var LineRevenue = from transacs in _transactions
+                              where Convert.ToDateTime(transacs.Date).Year == DateTime.Now.Year && transacs.AgentID == this.userID
+                              group transacs by Convert.ToDateTime(transacs.Date).Month into transactions
+                              select new
+                              {
+                                  Month = transactions.Key,
+                                  Amount = transactions.Sum(t => t.Amount)
+                              };
 
-            //RevenueDataset.BorderWidth = 1;
-            //RevenueDataset.PointBorderWidth = 0;
-            //RevenueDataset.PointRadius = 3;
+            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+            int monthIndex = 1;
+            List<Tuple<string, double>> MonthlyData = new List<Tuple<string, double>>();
+            foreach (var month in months)
+            {
+                decimal? amount = 0L;
+                foreach (var transacs in LineRevenue)
+                {
+                    if (transacs.Month == monthIndex)
+                    {
+                        amount = transacs.Amount;
+                    }
+                }
+                RevenueDataset.DataPoints.Add(month, (double)amount);
+                monthIndex++;
+            }
 
             revenueChart.Datasets.Add(RevenueDataset);
 
@@ -82,6 +123,9 @@ namespace TerraHomes.AgentsView.Dashboard
             PropertiesSoldData();
             RevenueLineGraph();
             ShowTransactions();
+            DonutGraph();
+            lblYear.Text = DateTime.Now.Year.ToString();
+
         }
     }
 }

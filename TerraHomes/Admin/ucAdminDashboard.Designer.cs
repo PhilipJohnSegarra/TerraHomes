@@ -373,7 +373,7 @@
             System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0))))),
             System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30))))),
             System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))))});
-            this.OccupancyRatePie.Label = "Doughnut1";
+            this.OccupancyRatePie.Label = "Occupancy Rate";
             this.OccupancyRatePie.TargetChart = this.occupancyPie;
             // 
             // label5
@@ -809,7 +809,7 @@
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "ucAdminDashboard";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
-            this.Size = new System.Drawing.Size(999, 647);
+            this.Size = new System.Drawing.Size(1071, 630);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();

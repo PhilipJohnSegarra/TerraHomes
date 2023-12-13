@@ -27,6 +27,7 @@ namespace TerraHomes.Agents
             agentDashboard = new AgentDashboard(this.userID);
             agentFinance = new ucAgentFinance();
             agentProperties = new ucAgentProperties();
+            agentFinance.userID = this.userID;
 
             agentDashboard.userID = UserID;
             agentFinance.userID = UserID;

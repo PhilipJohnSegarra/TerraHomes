@@ -12,6 +12,7 @@ namespace TerraHomes.AgentsView
 {
     public partial class AgentSideBar : UserControl
     {
+        frmStartUp frmStartUp;
         public AgentSideBar()
         {
             InitializeComponent();
@@ -39,6 +40,13 @@ namespace TerraHomes.AgentsView
         private void gbtnProfile_Click(object sender, EventArgs e)
         {
             btnProfileClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            frmStartUp = new frmStartUp();
+            this.ParentForm.Close();
+            frmStartUp.Show();
         }
     }
 }
