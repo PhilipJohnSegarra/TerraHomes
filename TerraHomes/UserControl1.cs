@@ -62,7 +62,7 @@ namespace TerraHomes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Account Does Not Exist or Username and Password are incorrect");
+                MessageBox.Show(ex.Message);
             }
             
 

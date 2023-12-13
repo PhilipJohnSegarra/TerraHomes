@@ -39,6 +39,7 @@ namespace TerraHomes
                           select user;
             btnProfile.Text = currentUser.First().Firstname + " " + currentUser.First().Lastname;
             lbluserType.Text = currentUser.First().UserType;
+            pbProfilePic.ImageLocation = currentUser.First().imageURL;
         }
     }
 }

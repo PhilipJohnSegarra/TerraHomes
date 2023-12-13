@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,14 @@ namespace TerraHomes.AgentsView.Dashboard
         List<sp_GetPropertiesResult> _properties;
         List<sp_GetTransactionsResult> _transactions;
 
-        public AgentDashboard()
+        public AgentDashboard(int userID)
         {
             InitializeComponent();
+
+            this.userID = userID;
             _properties = PropertiesDB.GetProperties();
             _transactions = TransactionsDB.GetTransactions();
+            
 
             PropertiesSoldData();
             RevenueLineGraph();
@@ -29,31 +33,23 @@ namespace TerraHomes.AgentsView.Dashboard
 
         private void PropertiesSoldData()
         {
-            List<sp_PropertiesSoldResult> propSold = PropertiesDB.GetPropertiesSold();
-            lblPropSold.Text = propSold.First().SoldCount.ToString();
-            lblAmountSold.Text = propSold.First().AmountSold.ToString();
+            var agentSoldCount = TransactionsDB.GetAgentSoldCount(this.userID);
+            lblPropSold.Text = agentSoldCount.First().SoldCount.ToString();
+            lblAmountSold.Text = Convert.ToDouble(agentSoldCount.First().TotalAmount).ToString("C", CultureInfo.GetCultureInfo("en-US"));
 
-            List<sp_PropertiesRentedResult> propRented = PropertiesDB.GetPropertiesRented();
-            lblPropRented.Text = propRented.First().SoldCount.ToString();
-            lblAmountRented.Text = propRented.First().AmountSold.ToString();
+            var agentRentedCount = TransactionsDB.GetAgentRentedCount(this.userID);
+            lblPropRented.Text = agentRentedCount.First().RentedCount.ToString();
+            lblAmountRented.Text = Convert.ToDouble(agentRentedCount.First().Total_Amount).ToString("C", CultureInfo.GetCultureInfo("en-US"));
 
-            List<sp_CountAvailableResult> availableProps = PropertiesDB.CountAvailable();
-            lblAvailable.Text = availableProps.First().Column1.ToString();
+            var agentAvailableCount = TransactionsDB.GetAgentAvailableCount(this.userID);
+            lblAvailable.Text = agentAvailableCount.First().AvailableCount.ToString();
 
-            //var propAvailable = from prop in _properties
-            //                    where prop.Status == "Available"
-            //                    select _properties.Count();
-
-            //lblAvailable.Text = propAvailable.FirstOrDefault().ToString();
-
-            var propPending = from prop in _properties
-                              where prop.Status == "Pending"
-                              select _properties.Count();
-            lblPending.Text = propPending.FirstOrDefault().ToString();
+            var agentPendingCount = TransactionsDB.GetAgentPendingCount(this.userID);
+            lblPending.Text = agentPendingCount.First().PendingCount.ToString();
         }
         private void ShowTransactions()
         {
-            dgvTransactions.DataSource = _transactions.ToList();
+            dgvTransactions.DataSource = TransactionsDB.GetAgentTransactions(this.userID).ToList();
         }
         private void RevenueLineGraph()
         {

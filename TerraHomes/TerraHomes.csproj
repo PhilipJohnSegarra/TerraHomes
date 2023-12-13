@@ -87,6 +87,18 @@
     <Compile Include="Admin\Agents\ucModifyAccount.Designer.cs">
       <DependentUpon>ucModifyAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\BudgetAllocation\frmBudgetAllocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\BudgetAllocation\frmBudgetAllocation.Designer.cs">
+      <DependentUpon>frmBudgetAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BudgetAllocation\ucBudgetAllocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\BudgetAllocation\ucBudgetAllocation.Designer.cs">
+      <DependentUpon>ucBudgetAllocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\CardsPanel.cs" />
     <Compile Include="Admin\Finance\ucFinance.cs">
       <SubType>UserControl</SubType>
@@ -99,6 +111,12 @@
     </Compile>
     <Compile Include="Admin\Properties\ucAddNewProperty.Designer.cs">
       <DependentUpon>ucAddNewProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Properties\ucAddTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Properties\ucAddTransaction.Designer.cs">
+      <DependentUpon>ucAddTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\Properties\ucProperties.cs">
       <SubType>UserControl</SubType>
@@ -167,6 +185,7 @@
     <Compile Include="AgentsView\Properties\ucSellProperty.Designer.cs">
       <DependentUpon>ucSellProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="BudgetAllocations.cs" />
     <Compile Include="CustomersDB.cs" />
     <Compile Include="DataSecure.cs" />
     <Compile Include="DCterrazon.cs">
@@ -231,11 +250,20 @@
     <EmbeddedResource Include="Admin\Agents\ucModifyAccount.resx">
       <DependentUpon>ucModifyAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BudgetAllocation\frmBudgetAllocation.resx">
+      <DependentUpon>frmBudgetAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BudgetAllocation\ucBudgetAllocation.resx">
+      <DependentUpon>ucBudgetAllocation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Finance\ucFinance.resx">
       <DependentUpon>ucFinance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Properties\ucAddNewProperty.resx">
       <DependentUpon>ucAddNewProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Properties\ucAddTransaction.resx">
+      <DependentUpon>ucAddTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Properties\ucProperties.resx">
       <DependentUpon>ucProperties.cs</DependentUpon>

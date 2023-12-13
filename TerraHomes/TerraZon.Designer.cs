@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gpnlMainPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ucAdminSideBar1 = new TerraHomes.Admin.ucAdminSideBar();
             this.ucTopPanel1 = new TerraHomes.ucTopPanel();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.gpnlMainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +81,10 @@
             this.pnlContent.Size = new System.Drawing.Size(1055, 766);
             this.pnlContent.TabIndex = 4;
             // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
             // frmTerraZon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -104,5 +110,6 @@
         public Guna.UI2.WinForms.Guna2GradientPanel gpnlMainPanel;
         public System.Windows.Forms.Panel pnlContent;
         public ucTopPanel ucTopPanel1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

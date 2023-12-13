@@ -82,17 +82,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.occupancyPie = new Guna.Charts.WinForms.GunaChart();
-            this.gunaDoughnutDataset1 = new Guna.Charts.WinForms.GunaDoughnutDataset();
+            this.OccupancyRatePie = new Guna.Charts.WinForms.GunaDoughnutDataset();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvTransactions = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblYear = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.revenueChart = new Guna.Charts.WinForms.GunaChart();
             this.RevenueDataset = new Guna.Charts.WinForms.GunaSplineDataset();
-            this.ProfitDataset = new Guna.Charts.WinForms.GunaSplineDataset();
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lblAmountPropSold = new System.Windows.Forms.Label();
@@ -156,6 +155,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(323, 34);
             this.guna2Panel1.TabIndex = 4;
+            this.guna2Panel1.Visible = false;
             // 
             // guna2Button2
             // 
@@ -315,7 +315,7 @@
             // 
             this.occupancyPie.BackColor = System.Drawing.Color.Transparent;
             this.occupancyPie.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] {
-            this.gunaDoughnutDataset1});
+            this.OccupancyRatePie});
             this.occupancyPie.Legend.Align = Guna.Charts.WinForms.ChartTextAlignment.Start;
             this.occupancyPie.Legend.Display = false;
             this.occupancyPie.Legend.FullWidth = false;
@@ -354,27 +354,27 @@
             tick3.Font = chartFont8;
             this.occupancyPie.ZAxes.Ticks = tick3;
             // 
-            // gunaDoughnutDataset1
+            // OccupancyRatePie
             // 
-            this.gunaDoughnutDataset1.BorderColors.AddRange(new System.Drawing.Color[] {
+            this.OccupancyRatePie.BorderColors.AddRange(new System.Drawing.Color[] {
             System.Drawing.Color.White});
-            this.gunaDoughnutDataset1.BorderWidth = 2;
+            this.OccupancyRatePie.BorderWidth = 2;
             lPoint1.Label = "Rentals";
             lPoint1.Y = 90D;
             lPoint2.Label = "Ownerships";
             lPoint2.Y = 87D;
             lPoint3.Label = "Others";
             lPoint3.Y = 20D;
-            this.gunaDoughnutDataset1.DataPoints.AddRange(new Guna.Charts.WinForms.LPoint[] {
+            this.OccupancyRatePie.DataPoints.AddRange(new Guna.Charts.WinForms.LPoint[] {
             lPoint1,
             lPoint2,
             lPoint3});
-            this.gunaDoughnutDataset1.FillColors.AddRange(new System.Drawing.Color[] {
+            this.OccupancyRatePie.FillColors.AddRange(new System.Drawing.Color[] {
             System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0))))),
             System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30))))),
             System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))))});
-            this.gunaDoughnutDataset1.Label = "Doughnut1";
-            this.gunaDoughnutDataset1.TargetChart = this.occupancyPie;
+            this.OccupancyRatePie.Label = "Doughnut1";
+            this.OccupancyRatePie.TargetChart = this.occupancyPie;
             // 
             // label5
             // 
@@ -466,7 +466,7 @@
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 9;
-            this.guna2CustomGradientPanel1.Controls.Add(this.label6);
+            this.guna2CustomGradientPanel1.Controls.Add(this.lblYear);
             this.guna2CustomGradientPanel1.Controls.Add(this.label3);
             this.guna2CustomGradientPanel1.Controls.Add(this.revenueChart);
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(52, 255);
@@ -477,16 +477,16 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(596, 354);
             this.guna2CustomGradientPanel1.TabIndex = 16;
             // 
-            // label6
+            // lblYear
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.label6.Location = new System.Drawing.Point(537, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "2023";
+            this.lblYear.AutoSize = true;
+            this.lblYear.Font = new System.Drawing.Font("Fredoka Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.lblYear.Location = new System.Drawing.Point(537, 20);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(45, 20);
+            this.lblYear.TabIndex = 11;
+            this.lblYear.Text = "2023";
             // 
             // label3
             // 
@@ -505,8 +505,7 @@
             this.revenueChart.AutoScroll = true;
             this.revenueChart.BackColor = System.Drawing.Color.Transparent;
             this.revenueChart.Datasets.AddRange(new Guna.Charts.Interfaces.IGunaDataset[] {
-            this.RevenueDataset,
-            this.ProfitDataset});
+            this.RevenueDataset});
             this.revenueChart.Legend.Align = Guna.Charts.WinForms.ChartTextAlignment.Start;
             chartFont9.FontName = "Arial";
             this.revenueChart.Legend.LabelFont = chartFont9;
@@ -528,7 +527,6 @@
             chartFont13.FontName = "Arial";
             tick4.Font = chartFont13;
             this.revenueChart.XAxes.Ticks = tick4;
-            this.revenueChart.YAxes.Display = false;
             this.revenueChart.YAxes.GridLines = grid5;
             chartFont14.FontName = "Arial";
             tick5.Font = chartFont14;
@@ -543,33 +541,18 @@
             // 
             // RevenueDataset
             // 
-            this.RevenueDataset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.RevenueDataset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
             this.RevenueDataset.BorderWidth = 2;
             this.RevenueDataset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RevenueDataset.Label = "Revenue";
             this.RevenueDataset.LegendBoxBorderColor = System.Drawing.Color.White;
-            this.RevenueDataset.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.RevenueDataset.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
             this.RevenueDataset.PointBorderColors.AddRange(new System.Drawing.Color[] {
-            System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))))});
+            System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))))});
             this.RevenueDataset.PointBorderWidth = 0;
             this.RevenueDataset.PointFillColors.AddRange(new System.Drawing.Color[] {
-            System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))))});
+            System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))))});
             this.RevenueDataset.TargetChart = this.revenueChart;
-            // 
-            // ProfitDataset
-            // 
-            this.ProfitDataset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ProfitDataset.BorderWidth = 2;
-            this.ProfitDataset.FillColor = System.Drawing.Color.Empty;
-            this.ProfitDataset.Label = "Profit";
-            this.ProfitDataset.LegendBoxBorderColor = System.Drawing.Color.White;
-            this.ProfitDataset.LegendBoxFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ProfitDataset.PointBorderColors.AddRange(new System.Drawing.Color[] {
-            System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))))});
-            this.ProfitDataset.PointBorderWidth = 0;
-            this.ProfitDataset.PointFillColors.AddRange(new System.Drawing.Color[] {
-            System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))))});
-            this.ProfitDataset.TargetChart = this.revenueChart;
             // 
             // guna2Elipse3
             // 
@@ -826,7 +809,7 @@
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "ucAdminDashboard";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
-            this.Size = new System.Drawing.Size(1031, 664);
+            this.Size = new System.Drawing.Size(999, 647);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
@@ -862,9 +845,8 @@
         private System.Windows.Forms.Label label3;
         private Guna.Charts.WinForms.GunaChart revenueChart;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblYear;
         private Guna.Charts.WinForms.GunaSplineDataset RevenueDataset;
-        private Guna.Charts.WinForms.GunaSplineDataset ProfitDataset;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
@@ -887,7 +869,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel2;
-        private Guna.Charts.WinForms.GunaDoughnutDataset gunaDoughnutDataset1;
+        private Guna.Charts.WinForms.GunaDoughnutDataset OccupancyRatePie;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;

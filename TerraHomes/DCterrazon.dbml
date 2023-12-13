@@ -74,6 +74,14 @@
       <Association Name="User_Transaction" Member="Transactions" ThisKey="UserID" OtherKey="AgentID" Type="Transaction" />
     </Type>
   </Table>
+  <Table Name="dbo.BudgetAllocations" Member="BudgetAllocations">
+    <Type Name="BudgetAllocation">
+      <Column Name="BudgetID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sector" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AmountAllocated" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.sp_GetData" Method="sp_GetData">
     <ElementType Name="sp_GetDataResult">
       <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -307,6 +315,65 @@
   <Function Name="dbo.sp_CountAvailable" Method="sp_CountAvailable">
     <ElementType Name="sp_CountAvailableResult">
       <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAgentSoldCount" Method="sp_GetAgentSoldCount">
+    <Parameter Name="agentID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAgentSoldCountResult">
+      <Column Name="SoldCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAgentRentedCount" Method="sp_GetAgentRentedCount">
+    <Parameter Name="agentID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAgentRentedCountResult">
+      <Column Name="RentedCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total Amount]" Member="Total_Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAgentAvailableCount" Method="sp_GetAgentAvailableCount">
+    <Parameter Name="agentID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAgentAvailableCountResult">
+      <Column Name="AvailableCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAgentPendingCount" Method="sp_GetAgentPendingCount">
+    <Parameter Name="agentID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAgentPendingCountResult">
+      <Column Name="PendingCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetAgentTransactions" Method="sp_GetAgentTransactions">
+    <Parameter Name="userID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetAgentTransactionsResult">
+      <Column Name="TransactionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Agent" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="Customer" Type="System.String" DbType="VarChar(101)" CanBeNull="true" />
+      <Column Name="PropertyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_InsertBudgetAllocation" Method="sp_InsertBudgetAllocation">
+    <Parameter Name="sector" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="amount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="date" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetBudgetsAllocations" Method="sp_GetBudgetsAllocations">
+    <ElementType Name="sp_GetBudgetsAllocationsResult">
+      <Column Name="BudgetID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AmountAllocated" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetBudgetSummary" Method="sp_GetBudgetSummary">
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetBudgetSummaryResult">
+      <Column Name="Months" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -217,9 +217,14 @@ namespace TerraHomes.Admin.Properties
                                          where propimg.PropertyID == Convert.ToInt32(txtPropertyId.Text)
                                          select propimg.ImageURL;
                     this.images = editPropImages.ToList();
-                    pbPropertyImages.ImageLocation = this.images.First();
-
-
+                    if (editPropImages.Any())
+                    {
+                        pbPropertyImages.ImageLocation = this.images.First();
+                    }
+                    else
+                    {
+                        pbPropertyImages.ImageLocation = null;
+                    }
                     txtPropertyName.Text = editProp.First().PropertyName;
                     txtPropertyAddress.Text = editProp.First().Address;
                     txtPropertyDesc.Text = editProp.First().Description;
@@ -269,9 +274,12 @@ namespace TerraHomes.Admin.Properties
         {
             try
             {
+                string title = "Comfirm";
+                string Message = "This property will be deleted permanently, \n continue?";
                 if (MessageBox.Show("This property will be deleted permanently, \n continue?") == DialogResult.OK)
                 {
                     PropertyImagesDB.DeleteAllPropImages(this.propID);
+                    
                     PropertiesDB.DeleteProperty(this.propID);
 
                     this.Visible = false;
@@ -288,6 +296,10 @@ namespace TerraHomes.Admin.Properties
                     this.SendToBack();
 
                     MessageBox.Show("Property has been deleted from the database");
+                }
+                else if(MessageBox.Show("This property will be deleted permanently, \n continue?") == DialogResult.Cancel)
+                {
+                    return;
                 }
             }
             catch(Exception ex)

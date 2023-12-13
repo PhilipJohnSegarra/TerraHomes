@@ -53,7 +53,15 @@ namespace TerraHomes.Admin.Properties
 
             //Modify the labels according to the data from the PropertiesDB
             lblPropertyName.Text = this.propertyName;
-            pbPropImage.ImageLocation = this.Images.First();
+            if (this.Images.Any())
+            {
+                pbPropImage.ImageLocation = this.Images.First();
+            }
+            else
+            {
+                pbPropImage.ImageLocation = null;
+            }
+            
             lblPrice.Text = this.price.ToString("C", CultureInfo.GetCultureInfo("en-US"));
             lblType.Text = this.type.ToString();
             lblStatus.Text = this.status.ToString();

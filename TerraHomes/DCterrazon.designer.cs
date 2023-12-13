@@ -48,6 +48,9 @@ namespace TerraHomes
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertBudgetAllocation(BudgetAllocation instance);
+    partial void UpdateBudgetAllocation(BudgetAllocation instance);
+    partial void DeleteBudgetAllocation(BudgetAllocation instance);
     #endregion
 		
 		public DCterrazonDataContext() : 
@@ -125,6 +128,14 @@ namespace TerraHomes
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<BudgetAllocation> BudgetAllocations
+		{
+			get
+			{
+				return this.GetTable<BudgetAllocation>();
 			}
 		}
 		
@@ -343,6 +354,62 @@ namespace TerraHomes
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_CountAvailableResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAgentSoldCount")]
+		public ISingleResult<sp_GetAgentSoldCountResult> sp_GetAgentSoldCount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentID);
+			return ((ISingleResult<sp_GetAgentSoldCountResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAgentRentedCount")]
+		public ISingleResult<sp_GetAgentRentedCountResult> sp_GetAgentRentedCount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentID);
+			return ((ISingleResult<sp_GetAgentRentedCountResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAgentAvailableCount")]
+		public ISingleResult<sp_GetAgentAvailableCountResult> sp_GetAgentAvailableCount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentID);
+			return ((ISingleResult<sp_GetAgentAvailableCountResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAgentPendingCount")]
+		public ISingleResult<sp_GetAgentPendingCountResult> sp_GetAgentPendingCount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> agentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agentID);
+			return ((ISingleResult<sp_GetAgentPendingCountResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetAgentTransactions")]
+		public ISingleResult<sp_GetAgentTransactionsResult> sp_GetAgentTransactions([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<sp_GetAgentTransactionsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_InsertBudgetAllocation")]
+		public int sp_InsertBudgetAllocation([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string sector, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sector, amount, date);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetBudgetsAllocations")]
+		public ISingleResult<sp_GetBudgetsAllocationsResult> sp_GetBudgetsAllocations()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_GetBudgetsAllocationsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_GetBudgetSummary")]
+		public ISingleResult<sp_GetBudgetSummaryResult> sp_GetBudgetSummary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year);
+			return ((ISingleResult<sp_GetBudgetSummaryResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1921,6 +1988,140 @@ namespace TerraHomes
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BudgetAllocations")]
+	public partial class BudgetAllocation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _BudgetID;
+		
+		private string _Sector;
+		
+		private System.Nullable<decimal> _AmountAllocated;
+		
+		private System.Nullable<System.DateTime> _DateAdded;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnBudgetIDChanging(int value);
+    partial void OnBudgetIDChanged();
+    partial void OnSectorChanging(string value);
+    partial void OnSectorChanged();
+    partial void OnAmountAllocatedChanging(System.Nullable<decimal> value);
+    partial void OnAmountAllocatedChanged();
+    partial void OnDateAddedChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateAddedChanged();
+    #endregion
+		
+		public BudgetAllocation()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BudgetID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int BudgetID
+		{
+			get
+			{
+				return this._BudgetID;
+			}
+			set
+			{
+				if ((this._BudgetID != value))
+				{
+					this.OnBudgetIDChanging(value);
+					this.SendPropertyChanging();
+					this._BudgetID = value;
+					this.SendPropertyChanged("BudgetID");
+					this.OnBudgetIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sector", DbType="VarChar(50)")]
+		public string Sector
+		{
+			get
+			{
+				return this._Sector;
+			}
+			set
+			{
+				if ((this._Sector != value))
+				{
+					this.OnSectorChanging(value);
+					this.SendPropertyChanging();
+					this._Sector = value;
+					this.SendPropertyChanged("Sector");
+					this.OnSectorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountAllocated", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> AmountAllocated
+		{
+			get
+			{
+				return this._AmountAllocated;
+			}
+			set
+			{
+				if ((this._AmountAllocated != value))
+				{
+					this.OnAmountAllocatedChanging(value);
+					this.SendPropertyChanging();
+					this._AmountAllocated = value;
+					this.SendPropertyChanged("AmountAllocated");
+					this.OnAmountAllocatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateAdded", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateAdded
+		{
+			get
+			{
+				return this._DateAdded;
+			}
+			set
+			{
+				if ((this._DateAdded != value))
+				{
+					this.OnDateAddedChanging(value);
+					this.SendPropertyChanging();
+					this._DateAdded = value;
+					this.SendPropertyChanged("DateAdded");
+					this.OnDateAddedChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	public partial class sp_GetDataResult
 	{
 		
@@ -3012,6 +3213,404 @@ namespace TerraHomes
 				if ((this._Column1 != value))
 				{
 					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAgentSoldCountResult
+	{
+		
+		private System.Nullable<int> _SoldCount;
+		
+		private System.Nullable<decimal> _TotalAmount;
+		
+		public sp_GetAgentSoldCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoldCount", DbType="Int")]
+		public System.Nullable<int> SoldCount
+		{
+			get
+			{
+				return this._SoldCount;
+			}
+			set
+			{
+				if ((this._SoldCount != value))
+				{
+					this._SoldCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAgentRentedCountResult
+	{
+		
+		private System.Nullable<int> _RentedCount;
+		
+		private System.Nullable<decimal> _Total_Amount;
+		
+		public sp_GetAgentRentedCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RentedCount", DbType="Int")]
+		public System.Nullable<int> RentedCount
+		{
+			get
+			{
+				return this._RentedCount;
+			}
+			set
+			{
+				if ((this._RentedCount != value))
+				{
+					this._RentedCount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Total Amount]", Storage="_Total_Amount", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> Total_Amount
+		{
+			get
+			{
+				return this._Total_Amount;
+			}
+			set
+			{
+				if ((this._Total_Amount != value))
+				{
+					this._Total_Amount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAgentAvailableCountResult
+	{
+		
+		private System.Nullable<int> _AvailableCount;
+		
+		public sp_GetAgentAvailableCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AvailableCount", DbType="Int")]
+		public System.Nullable<int> AvailableCount
+		{
+			get
+			{
+				return this._AvailableCount;
+			}
+			set
+			{
+				if ((this._AvailableCount != value))
+				{
+					this._AvailableCount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAgentPendingCountResult
+	{
+		
+		private System.Nullable<int> _PendingCount;
+		
+		public sp_GetAgentPendingCountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PendingCount", DbType="Int")]
+		public System.Nullable<int> PendingCount
+		{
+			get
+			{
+				return this._PendingCount;
+			}
+			set
+			{
+				if ((this._PendingCount != value))
+				{
+					this._PendingCount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetAgentTransactionsResult
+	{
+		
+		private int _TransactionID;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Agent;
+		
+		private string _Customer;
+		
+		private System.Nullable<int> _PropertyID;
+		
+		private System.Nullable<decimal> _Amount;
+		
+		private string _Status;
+		
+		public sp_GetAgentTransactionsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransactionID", DbType="Int NOT NULL")]
+		public int TransactionID
+		{
+			get
+			{
+				return this._TransactionID;
+			}
+			set
+			{
+				if ((this._TransactionID != value))
+				{
+					this._TransactionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Agent", DbType="VarChar(101)")]
+		public string Agent
+		{
+			get
+			{
+				return this._Agent;
+			}
+			set
+			{
+				if ((this._Agent != value))
+				{
+					this._Agent = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer", DbType="VarChar(101)")]
+		public string Customer
+		{
+			get
+			{
+				return this._Customer;
+			}
+			set
+			{
+				if ((this._Customer != value))
+				{
+					this._Customer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyID", DbType="Int")]
+		public System.Nullable<int> PropertyID
+		{
+			get
+			{
+				return this._PropertyID;
+			}
+			set
+			{
+				if ((this._PropertyID != value))
+				{
+					this._PropertyID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(50)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetBudgetsAllocationsResult
+	{
+		
+		private int _BudgetID;
+		
+		private string _Sector;
+		
+		private System.Nullable<decimal> _AmountAllocated;
+		
+		private System.Nullable<System.DateTime> _DateAdded;
+		
+		public sp_GetBudgetsAllocationsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BudgetID", DbType="Int NOT NULL")]
+		public int BudgetID
+		{
+			get
+			{
+				return this._BudgetID;
+			}
+			set
+			{
+				if ((this._BudgetID != value))
+				{
+					this._BudgetID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sector", DbType="VarChar(50)")]
+		public string Sector
+		{
+			get
+			{
+				return this._Sector;
+			}
+			set
+			{
+				if ((this._Sector != value))
+				{
+					this._Sector = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AmountAllocated", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> AmountAllocated
+		{
+			get
+			{
+				return this._AmountAllocated;
+			}
+			set
+			{
+				if ((this._AmountAllocated != value))
+				{
+					this._AmountAllocated = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateAdded", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateAdded
+		{
+			get
+			{
+				return this._DateAdded;
+			}
+			set
+			{
+				if ((this._DateAdded != value))
+				{
+					this._DateAdded = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_GetBudgetSummaryResult
+	{
+		
+		private System.Nullable<int> _Months;
+		
+		private System.Nullable<decimal> _TotalAmount;
+		
+		public sp_GetBudgetSummaryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Months", DbType="Int")]
+		public System.Nullable<int> Months
+		{
+			get
+			{
+				return this._Months;
+			}
+			set
+			{
+				if ((this._Months != value))
+				{
+					this._Months = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalAmount", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
 				}
 			}
 		}

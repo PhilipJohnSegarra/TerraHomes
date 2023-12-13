@@ -238,7 +238,15 @@ namespace TerraHomes.Admin.Properties
                 ucViewProperty1.cbAssignees.Text = thumbnail.assignedTo;
                 ucViewProperty1.images = thumbnail.Images;
                 ucViewProperty1.cbAssignees.Text = thumbnail.assignedTo.ToString();
-                ucViewProperty1.pbPropertyImages.ImageLocation = ucViewProperty1.images.ToArray()[0];
+                if (thumbnail.Images.Any())
+                {
+                    ucViewProperty1.pbPropertyImages.ImageLocation = ucViewProperty1.images.ToArray()[0];
+                }
+                else
+                {
+                    ucViewProperty1.pbPropertyImages.ImageLocation = null;
+                }
+                
             }
             ucViewProperty1.BringToFront();
             ucViewProperty1.Visible = true;

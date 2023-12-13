@@ -34,6 +34,7 @@
             this.gbtnAgents = new Guna.UI2.WinForms.Guna2Button();
             this.gbtnProperties = new Guna.UI2.WinForms.Guna2Button();
             this.gbtnFinance = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             this.guna2CustomGradientPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 30;
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2CustomGradientPanel1.Controls.Add(this.gbtnAgents);
             this.guna2CustomGradientPanel1.Controls.Add(this.gbtnProperties);
             this.guna2CustomGradientPanel1.Controls.Add(this.gbtnFinance);
@@ -99,7 +101,7 @@
             this.gbtnAgents.ForeColor = System.Drawing.Color.DarkGray;
             this.gbtnAgents.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.gbtnAgents.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.gbtnAgents.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.gbtnAgents.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.gbtnAgents.Image = ((System.Drawing.Image)(resources.GetObject("gbtnAgents.Image")));
             this.gbtnAgents.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.gbtnAgents.ImageOffset = new System.Drawing.Point(20, 0);
@@ -127,7 +129,7 @@
             this.gbtnProperties.ForeColor = System.Drawing.Color.DarkGray;
             this.gbtnProperties.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.gbtnProperties.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.gbtnProperties.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.gbtnProperties.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.gbtnProperties.Image = ((System.Drawing.Image)(resources.GetObject("gbtnProperties.Image")));
             this.gbtnProperties.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.gbtnProperties.ImageOffset = new System.Drawing.Point(20, 0);
@@ -155,7 +157,7 @@
             this.gbtnFinance.ForeColor = System.Drawing.Color.DarkGray;
             this.gbtnFinance.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.gbtnFinance.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
-            this.gbtnFinance.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.gbtnFinance.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.gbtnFinance.Image = ((System.Drawing.Image)(resources.GetObject("gbtnFinance.Image")));
             this.gbtnFinance.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.gbtnFinance.ImageOffset = new System.Drawing.Point(20, 0);
@@ -167,6 +169,33 @@
             this.gbtnFinance.Text = "Finance";
             this.gbtnFinance.TextOffset = new System.Drawing.Point(10, 0);
             this.gbtnFinance.Click += new System.EventHandler(this.gbtnFinance_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Fredoka Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(59)))), ((int)(((byte)(43)))));
+            this.guna2Button1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.ImageOffset = new System.Drawing.Point(20, 0);
+            this.guna2Button1.Location = new System.Drawing.Point(26, 297);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.PressedColor = System.Drawing.Color.White;
+            this.guna2Button1.Size = new System.Drawing.Size(195, 37);
+            this.guna2Button1.TabIndex = 4;
+            this.guna2Button1.Text = "Profile";
+            this.guna2Button1.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // ucAdminSideBar
             // 
@@ -187,5 +216,6 @@
         public Guna.UI2.WinForms.Guna2Button gbtnAgents;
         public Guna.UI2.WinForms.Guna2Button gbtnProperties;
         public Guna.UI2.WinForms.Guna2Button gbtnFinance;
+        public Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

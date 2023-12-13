@@ -38,5 +38,40 @@ namespace TerraHomes
                 _dbContext.sp_DeleteTransactions(transactionID);
             }
         }
+        public static List<sp_GetAgentSoldCountResult> GetAgentSoldCount(int agentID)
+        {
+            using(_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_GetAgentSoldCount(agentID).ToList<sp_GetAgentSoldCountResult>();
+            }
+        }
+        public static List<sp_GetAgentRentedCountResult> GetAgentRentedCount(int agentID)
+        {
+            using (_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_GetAgentRentedCount(agentID).ToList<sp_GetAgentRentedCountResult>();
+            }
+        }
+        public static List<sp_GetAgentAvailableCountResult> GetAgentAvailableCount(int agentID)
+        {
+            using (_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_GetAgentAvailableCount(agentID).ToList<sp_GetAgentAvailableCountResult>();
+            }
+        }
+        public static List<sp_GetAgentPendingCountResult> GetAgentPendingCount(int agentID)
+        {
+            using (_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_GetAgentPendingCount(agentID).ToList<sp_GetAgentPendingCountResult>();
+            }
+        }
+        public static List<sp_GetAgentTransactionsResult> GetAgentTransactions(int agentID)
+        {
+            using (_dbContext = new DCterrazonDataContext())
+            {
+                return _dbContext.sp_GetAgentTransactions(agentID).ToList<sp_GetAgentTransactionsResult>();
+            }
+        }
     }
 }

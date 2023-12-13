@@ -142,14 +142,11 @@
         PvJersHC09B1V7inMPHdiCsaAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="gunaDoughnutDataset1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="OccupancyRatePie.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>538, 20</value>
   </metadata>
   <metadata name="RevenueDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>287, 22</value>
-  </metadata>
-  <metadata name="ProfitDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>429, 18</value>
   </metadata>
   <metadata name="guna2Elipse3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>163, 20</value>
@@ -157,7 +154,7 @@
   <data name="guna2GradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DAAACwwBP0AiyAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -382,7 +379,7 @@
   <data name="guna2GradientPanel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DAAACwwBP0AiyAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -607,7 +604,7 @@
   <data name="guna2GradientPanel3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DAAACwwBP0AiyAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -832,7 +829,7 @@
   <data name="guna2GradientPanel4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANIAAACQCAYAAAB9CTUlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
+        DAAACwwBP0AiyAAAMztJREFUeF7tffnurVdxJbMI4FYIENsSf1gttdTBDN0N3cE2g2Pf6+l6ohFNg4SI
         gBYkkIRA5gmHhCFheoSknyjdT9B5Az/Cr3fVrlW1qnbt75xzryGRco60XFWrVtWub59v3+/8zh38uqPX
         y48/9MsvPvr+77z02MP/b+Am8H7yXwvUfq91/wN8jNc6f92XUx3wC5xbcY/rtdfQ4FzdIc7o0a1zN2tf
         VLPRRo9/GviHZz76Hx+yY3HZ68XHHv7iwKveeGDEJ+305xCIwXH84qODG8O6z7kBiQHkqybrbE3VlrUs
@@ -1067,6 +1064,6 @@
     <value>17, 55</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>111</value>
+    <value>89</value>
   </metadata>
 </root>
