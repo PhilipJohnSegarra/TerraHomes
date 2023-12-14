@@ -30,6 +30,7 @@ namespace TerraHomes.Admin.Agents
         {
 
         }
+        
 
         private void txtUserID_TextChanged(object sender, EventArgs e)
         {
@@ -108,13 +109,13 @@ namespace TerraHomes.Admin.Agents
         {
             try
             {
-                UsersDB.UpdateUser(this.userId, txtUsername.Text, txtPassword.Text, txtFirstName.Text, txtLastName.Text, txtEmail.Text, cbType.Text, pbProfilePic.ImageLocation);
+                UsersDB.UpdateUser(this.userId, txtUsername.Text, DataSecure.Encrypt(txtPassword.Text), txtFirstName.Text, txtLastName.Text, txtEmail.Text, cbType.Text, pbProfilePic.ImageLocation);
 
                 MessageBox.Show("User Account Update Successful");
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message); 
             }
         }
 
@@ -145,6 +146,19 @@ namespace TerraHomes.Admin.Agents
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ucModifyAccount_VisibleChanged(object sender, EventArgs e)
+        {
+            if(this.Visible)
+            {
+                txtUserID.Text = this.userId.ToString();
+            }
+            else
+            {
+                txtUserID.Text = "";
+            }
+            
         }
     }
 }

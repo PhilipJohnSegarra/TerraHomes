@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace TerraHomes.Admin
         public event EventHandler FinanceButtonClicked;
         public event EventHandler PropertiesButtonClicked;
         public event EventHandler AgentsButtonClicked;
+        public event EventHandler ProfileButtonClicked;
 
 
         private void gtbnDashboard_Click(object sender, EventArgs e)
@@ -50,6 +52,11 @@ namespace TerraHomes.Admin
             this.ParentForm.Close();
             frmStartUp = new frmStartUp();
             frmStartUp.ShowDialog();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ProfileButtonClicked?.Invoke(this, EventArgs.Empty);
         }
     }
 }

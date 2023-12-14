@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TerraHomes.Admin;
 using TerraHomes.Admin.Agents;
 using TerraHomes.Admin.Finance;
+using TerraHomes.Admin.Profile;
 using TerraHomes.Admin.Properties;
 
 namespace TerraHomes
@@ -21,6 +22,7 @@ namespace TerraHomes
         ucFinance finance;
         public ucProperties properties;
         ucAgents agents;
+        ucProfile profile;
         public frmTerraZon(int UserID)
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace TerraHomes
             properties = new ucProperties();
             finance = new ucFinance();
             agents = new ucAgents();
+            profile = new ucProfile();
+            profile.userId = this.UserID;
             properties.userID = UserID;
 
             //Initialize its properties
@@ -39,22 +43,31 @@ namespace TerraHomes
             finance.Dock = DockStyle.Fill; finance.Visible = true;
             dashboard.Dock = DockStyle.Fill; dashboard.Visible = true;
             agents.Dock = DockStyle.Fill; agents.Visible = true;
+            profile.Dock = DockStyle.Fill;profile.Visible = true;
 
             //Add the user controls to the panel content
             this.pnlContent.Controls.Add(dashboard);
             this.pnlContent.Controls.Add(properties);
             this.pnlContent.Controls.Add(finance);
             this.pnlContent.Controls.Add(agents);
+            this.pnlContent.Controls.Add(profile);
 
             //Add the events
             ucAdminSideBar1.DashboardButtonClicked += Sidebar_DashboardButtonClicked;
             ucAdminSideBar1.FinanceButtonClicked += UcAdminSideBar1_FinanceButtonClicked;
             ucAdminSideBar1.PropertiesButtonClicked += UcAdminSideBar1_PropertiesButtonClicked;
             ucAdminSideBar1.AgentsButtonClicked += UcAdminSideBar1_AgentsButtonClicked;
+            ucAdminSideBar1.ProfileButtonClicked += UcAdminSideBar1_ProfileButtonClicked;
 
 
             //this.Width = Screen.PrimaryScreen.WorkingArea.Width;
             //this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+        }
+
+        private void UcAdminSideBar1_ProfileButtonClicked(object sender, EventArgs e)
+        {
+            profile.BringToFront();
+            this.pnlContent.Refresh();
         }
 
         private void UcAdminSideBar1_AgentsButtonClicked(object sender, EventArgs e)

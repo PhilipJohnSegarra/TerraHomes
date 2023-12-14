@@ -63,6 +63,19 @@ namespace TerraHomes
                 _dbContext.sp_DeleteUsers(id);
             }
         }
-
+        public static void UpdateUserInfo(int userID, string fname, string lname, string email, string type, string imageURL)
+        {
+            using(_dbContext = new DCterrazonDataContext())
+            {
+                _dbContext.sp_UpdateUserInfo(userID, fname, lname, email, type, imageURL);
+            }
+        }
+        public static void UpdateUserAccount(int userID, string username, string password)
+        {
+            using (_dbContext = new DCterrazonDataContext())
+            {
+                _dbContext.sp_UpdateUserAccount(userID, username, password);
+            }
+        }
     }
 }

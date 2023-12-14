@@ -80,7 +80,7 @@
         <classShapeMoniker Id="eb468568-3efc-4251-be4a-d35a969e81ef" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.125 : 2.46079752604167); (6.75 : 2.46079752604167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(3.125 : 2.46079752604167); (4.16666666666667 : 2.46079752604167 : JumpStart); (4.33333333333333 : 2.46079752604167 : JumpEnd); (6.75 : 2.46079752604167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DCterrazonDataContext/User/User_Transaction" />
       <nodes>
         <classShapeMoniker Id="97bf0491-1923-41de-8743-2d58fecdb05e" />

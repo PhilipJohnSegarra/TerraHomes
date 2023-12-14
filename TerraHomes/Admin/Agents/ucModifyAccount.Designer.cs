@@ -444,8 +444,9 @@
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.pbProfilePic);
             this.Name = "ucModifyAccount";
-            this.Size = new System.Drawing.Size(1008, 682);
+            this.Size = new System.Drawing.Size(991, 682);
             this.Load += new System.EventHandler(this.ucModifyAccount_Load);
+            this.VisibleChanged += new System.EventHandler(this.ucModifyAccount_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
@@ -473,7 +474,7 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
-        private Guna.UI2.WinForms.Guna2TextBox txtUserID;
         private System.Windows.Forms.Label label7;
+        public Guna.UI2.WinForms.Guna2TextBox txtUserID;
     }
 }

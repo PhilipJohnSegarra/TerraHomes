@@ -56,6 +56,8 @@ namespace TerraHomes.Admin.Agents
                     agentsThumbnail.Width = 308; agentsThumbnail.Height = 350;
                     agentsThumbnail.BackColor = Color.Transparent;
 
+                    agentsThumbnail.btnSeemoreClick += AgentsThumbnail_btnSeemoreClick;
+
                     FLPusers.Controls.Add(agentsThumbnail);
                 }
             }
@@ -71,8 +73,21 @@ namespace TerraHomes.Admin.Agents
                     agentsThumbnail.Width = 308; agentsThumbnail.Height = 350;
                     agentsThumbnail.BackColor = Color.Transparent;
 
+                    agentsThumbnail.btnSeemoreClick += AgentsThumbnail_btnSeemoreClick;
+
                     FLPusers.Controls.Add(agentsThumbnail);
                 }
+            }
+        }
+
+        private void AgentsThumbnail_btnSeemoreClick(object sender, EventArgs e)
+        {
+            ucModifyAccount1.BringToFront();
+            ucModifyAccount1.Visible = true;
+            if(sender is ucAgentsThumbnail agentthumbnail)
+            {
+                ucModifyAccount1.userId = agentthumbnail.userID;
+                ucModifyAccount1.txtUserID.Text = agentthumbnail.userID.ToString();
             }
         }
 
