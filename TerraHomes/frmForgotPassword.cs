@@ -47,7 +47,7 @@ namespace TerraHomes
             senderPass = "wmit qzng vptn noia";
 
             MimeMessage message = new MimeMessage(); // Creating object for Message
-            message.From.Add(new MailboxAddress("TerraHomes", senderEmail)); //Sender's information
+            message.From.Add(new MailboxAddress("TerraHomes-OTP", senderEmail)); //Sender's information
             message.To.Add(MailboxAddress.Parse(receiverEmail)); //Receiver's Information
 
             message.Subject = "One-Time-Password"; //Email's Subject
