@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl1));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.llbForgotPassword = new System.Windows.Forms.LinkLabel();
             this.llSignUp = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogIn = new Guna.UI2.WinForms.Guna2Button();
@@ -42,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucAdminSignUp1 = new TerraHomes.ucAdminSignUp();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +52,7 @@
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel1.BorderRadius = 7;
+            this.guna2CustomGradientPanel1.Controls.Add(this.llbForgotPassword);
             this.guna2CustomGradientPanel1.Controls.Add(this.llSignUp);
             this.guna2CustomGradientPanel1.Controls.Add(this.label3);
             this.guna2CustomGradientPanel1.Controls.Add(this.btnLogIn);
@@ -67,12 +70,25 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(510, 433);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
+            // llbForgotPassword
+            // 
+            this.llbForgotPassword.AutoSize = true;
+            this.llbForgotPassword.Font = new System.Drawing.Font("Fredoka", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(17)))));
+            this.llbForgotPassword.Location = new System.Drawing.Point(197, 368);
+            this.llbForgotPassword.Name = "llbForgotPassword";
+            this.llbForgotPassword.Size = new System.Drawing.Size(130, 19);
+            this.llbForgotPassword.TabIndex = 9;
+            this.llbForgotPassword.TabStop = true;
+            this.llbForgotPassword.Text = "Forgot Password?";
+            this.llbForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbForgotPassword_LinkClicked);
+            // 
             // llSignUp
             // 
             this.llSignUp.AutoSize = true;
             this.llSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llSignUp.LinkColor = System.Drawing.Color.Black;
-            this.llSignUp.Location = new System.Drawing.Point(344, 329);
+            this.llSignUp.Location = new System.Drawing.Point(343, 296);
             this.llSignUp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llSignUp.Name = "llSignUp";
             this.llSignUp.Size = new System.Drawing.Size(95, 25);
@@ -86,7 +102,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(125)))));
-            this.label3.Location = new System.Drawing.Point(295, 333);
+            this.label3.Location = new System.Drawing.Point(294, 300);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 20);
@@ -104,7 +120,7 @@
             this.btnLogIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(60)))), ((int)(((byte)(45)))));
             this.btnLogIn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnLogIn.Location = new System.Drawing.Point(67, 319);
+            this.btnLogIn.Location = new System.Drawing.Point(66, 286);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.ShadowDecoration.BorderRadius = 9;
@@ -247,11 +263,19 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // ucAdminSignUp1
+            // 
+            this.ucAdminSignUp1.Location = new System.Drawing.Point(154, 186);
+            this.ucAdminSignUp1.Name = "ucAdminSignUp1";
+            this.ucAdminSignUp1.Size = new System.Drawing.Size(851, 376);
+            this.ucAdminSignUp1.TabIndex = 4;
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.ucAdminSignUp1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.guna2CustomGradientPanel1);
@@ -282,5 +306,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.LinkLabel llSignUp;
+        private System.Windows.Forms.LinkLabel llbForgotPassword;
+        private ucAdminSignUp ucAdminSignUp1;
     }
 }

@@ -140,6 +140,7 @@
             this.btnProfile.Text = "Juan de la Cruz";
             this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProfile.TextOffset = new System.Drawing.Point(-13, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // lbluserType
             // 

@@ -115,6 +115,7 @@ namespace TerraHomes.Admin.Profile
                 UsersDB.UpdateUserInfo(this.userId, txtFirstName.Text, txtLastName.Text, txtEmail.Text, cbType.Text, this.imageSource);
                 MessageBox.Show("Profile Updated Successfully");
                 EnableInfoEditing(false);
+                lblFullName.Text = txtLastName.Text + ", " + txtFirstName.Text;
             }
             catch(Exception ex)
             {
@@ -125,6 +126,7 @@ namespace TerraHomes.Admin.Profile
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Loadprofile();
+            EnableInfoEditing(false);
         }
 
         private void btnSaveAccountSettings_Click(object sender, EventArgs e)
@@ -151,6 +153,7 @@ namespace TerraHomes.Admin.Profile
         private void btnCancelChanges_Click(object sender, EventArgs e)
         {
             Loadprofile();
+            EnableAccountEditing(false);
         }
     }
 }

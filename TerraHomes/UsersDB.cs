@@ -77,5 +77,12 @@ namespace TerraHomes
                 _dbContext.sp_UpdateUserAccount(userID, username, password);
             }
         }
+        public static void UpdatePassword(string email, string password)
+        {
+            using(_dbContext = new DCterrazonDataContext())
+            {
+                _dbContext.sp_updatePassword(email, password);
+            }
+        }
     }
 }

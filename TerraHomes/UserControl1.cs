@@ -16,12 +16,33 @@ namespace TerraHomes
         frmTerraZon terraZon;
         DCterrazonDataContext db;
         AgentsForm agentform;
+        frmForgotPassword frmForgotPassword;
         public UserControl1()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             
             db = new DCterrazonDataContext();
+
+            ucAdminSignUp1.BringToFront();
+            AdminOrAgent();
+        }
+        private void AdminOrAgent()
+        {
+            ucAdminSignUp1.rbtnAdmin.Click += RbtnAdmin_Click;
+            ucAdminSignUp1.rbtnAgent.Click += RbtnAgent_Click;
+        }
+
+        private void RbtnAgent_Click(object sender, EventArgs e)
+        {
+            ucAdminSignUp1.Visible = false;
+            llSignUp.Enabled = false;
+        }
+
+        private void RbtnAdmin_Click(object sender, EventArgs e)
+        {
+            ucAdminSignUp1.Visible = false;
+            llSignUp.Enabled = true;
         }
 
         private void llSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -66,6 +87,12 @@ namespace TerraHomes
             }
             
 
+        }
+
+        private void llbForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmForgotPassword = new frmForgotPassword();
+            frmForgotPassword.ShowDialog();
         }
     }
 }

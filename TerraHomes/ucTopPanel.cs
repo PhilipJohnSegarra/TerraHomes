@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TerraHomes.Agents;
 
 namespace TerraHomes
 {
@@ -48,6 +49,11 @@ namespace TerraHomes
             this.ParentForm.Close();
             frmStartUp = new frmStartUp();
             frmStartUp.ShowDialog();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

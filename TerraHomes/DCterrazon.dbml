@@ -391,4 +391,9 @@
     <Parameter Name="imageURL" Type="System.String" DbType="VarChar(500)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_updatePassword" Method="sp_updatePassword">
+    <Parameter Name="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="password" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
